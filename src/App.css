@@ -73,6 +73,7 @@
 .code-editor-windows {
   border: 1px solid #0D3141;
   border-radius: 5px;
+  box-shadow: 0 0 30px 0 #27ccb85c;
 }
 
 .code-editor-windows .code-editor-window-title {
@@ -266,9 +267,9 @@
 	height: 700px;
 	position: absolute;
 	border-radius: 50px;
-	border: 5px solid #3ce37c;
-	box-shadow: 0 0 10px #3ce37c,
-		0 0 30px #3ce37c;
+	border: 5px solid #27CCB8;
+	box-shadow: 0 0 10px #27CCB8,
+		0 0 30px #27CCB8;
 	animation: zooming 4s linear infinite alternate;
 }
 
