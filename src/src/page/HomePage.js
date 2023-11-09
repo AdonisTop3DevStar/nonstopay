@@ -142,7 +142,7 @@ export default function HomePage() {
                 />
                 <Header id="home" />
                 <section className="slogan-section py-5 position-relative">
-                    <Container className="my-5 py-5">
+                    <Container className="py-5">
                         <Row className="align-items-center py-5">
                             <Col sm={12} md={6} className="text-md-start text-center">
                                 <div className="slogan-title mb-5 text-white">
@@ -162,9 +162,9 @@ export default function HomePage() {
                                 <Button className="main-btn rounded-5 border-0 shadow mb-5">Integrate Now</Button>
                             </Col>
                             <Col sm={12} md={6} className="text-center">
-                                <iframe src="/dist/index.html" width="100%" height="550px" title="Earth"></iframe>
+                                <Image src={CodebaseImage} alt="hero" width="100%" className="HeroImage" />
+                                {/* <iframe src="/dist/index.html" width="100%" height="550px" title="Earth"></iframe>
                                 <div className="animation-image position-relative">
-                                    {/* <Image src={HeroImage} alt="hero" width="300" className="HeroImage"/>
                                     <Image src={Cloud1Image} alt="hero" width="100" className="Cloud1Image"/>
                                     <Image src={Cloud2Image} alt="hero" width="150" className="Cloud2Image"/>
                                     <Image src={Cloud3Image} alt="hero" width="100" className="Cloud3Image"/>
@@ -172,16 +172,16 @@ export default function HomePage() {
                                     <Image src={Cloud5Image} alt="hero" width="100" className="Cloud5Image"/>
                                     <Image src={Fly1Image} alt="hero" width="70" className="Fly1Image"/>
                                     <Image src={Fly2Image} alt="hero" width="20" className="Fly2Image"/>
-                                    <Image src={Fly3Image} alt="hero" width="30" className="Fly3Image"/> */}
+                                    <Image src={Fly3Image} alt="hero" width="30" className="Fly3Image"/>
 
-                                </div>
+                                </div> */}
                             </Col>
                         </Row>
                     </Container>
                 </section>
             </section>
             <section className="trust-section py-5" id="trust">
-                <Container className="my-5 py-5">
+                <Container className="">
                     <div className="section-title text-center mb-5">Trusted By</div>
                     <Row>
                         <Col sm={12} md={3} className="mb-4 text-center"><Image src={TrustIcon1} width="200" alt="nocode3.xyz" /></Col>
@@ -195,21 +195,39 @@ export default function HomePage() {
                     </Row>
                 </Container>
             </section>
+
             <section className="earth-section" id="map">
-                <Container className="my-5 py-5">
+                <Container className="">
                     <div className="section-title text-center mb-5">NO MIDDLEMEN, NO INTERMEDIARIES</div>
+                    <div className="text-center text-white mb-5">Taking your business to scale requires it to accept payments from all over the globe. NONSTOPAY drives your expansion – fast, safe, and perfectly convenient.</div>
                     <iframe src="/earth.htm" width="100%" height="650px" title="Earth"></iframe>
                 </Container>
             </section>
             <section className="codebase-section py-5" id="codebase">
-                <Container className="my-5 py-5">
+                <div class="bg-container">
+                    <div class="frame"></div>
+                    <div class="frame"></div>
+                    <div class="frame"></div>
+                    <div class="frame"></div>
+                    <div class="frame"></div>
+                    <div class="frame"></div>
+                    <div class="frame"></div>
+                    <div class="frame"></div>
+                    <div class="frame"></div>
+                    <div class="frame"></div>
+                    <div class="frame"></div>
+                    <div class="frame"></div>
+                    <div class="frame"></div>
+                    <div class="frame"></div>
+                </div>
+                <Container className="">
                     <div className="section-title text-center mb-5">A few lines of code, that's all</div>
                     <Row>
                         <Col sm={12} md={8} className="mx-auto">
                             <div className="code-editor-windows">
                                 <div className="text-center code-editor-window-title py-2">Editor<span className="windows-controller">● ● ●</span></div>
                                 <Editor
-                                    height="30vh"
+                                    height="35vh"
                                     theme="vs-dark"
                                     defaultLanguage="javascript"
                                     defaultValue={code}
@@ -221,12 +239,13 @@ export default function HomePage() {
             </section>
             <section className="bottom-bg" id="usecase">
                 <section className="main-card-section py-5">
-                    <Container className="my-5 py-5">
+                    <Container className="">
                         <div className="section-title text-center mb-5">Use case</div>
                         <Row>
                             <Col sm={12} md={4} className="mb-3">
                                 <Card className="main-card p-4">
                                     <Card.Body className="pt-5">
+                                        <Card.Img src={CodebaseImage} width="100%"/>
                                         <Card.Title className="mt-5 pt-5 mb-3">GAMEFI</Card.Title>
                                         <Card.Text>Supercharge your in-game economies with the most comprehensive crypto payment stack in the world</Card.Text>
                                     </Card.Body>
@@ -234,7 +253,8 @@ export default function HomePage() {
                             </Col>
                             <Col sm={12} md={4} className="mb-3">
                                 <Card className="main-card p-4 pb-5">
-                                    <Card.Body className="pt-5">
+                                    <Card.Body className="pb-4">
+                                    <Card.Img src={CodebaseImage} width="100%"/>
                                         <Card.Title className="mt-5 pt-5 mb-3">NFTS</Card.Title>
                                         <Card.Text>Onboard users instantly from their bank into your NFT marketplace or NFT mint-drop</Card.Text>
                                     </Card.Body>
@@ -242,7 +262,8 @@ export default function HomePage() {
                             </Col>
                             <Col sm={12} md={4} className="mb-3">
                                 <Card className="main-card p-4 pb-5">
-                                    <Card.Body className="pt-5">
+                                    <Card.Body className="pt-4">
+                                    <Card.Img src={CodebaseImage} width="100%"/>
                                         <Card.Title className="mt-5 pt-5 mb-3">OFF-RAMP</Card.Title>
                                         <Card.Text>Discover the easiest way to cash out your crypto with GateFi's Off-Ramp solution</Card.Text>
                                     </Card.Body>
@@ -252,7 +273,7 @@ export default function HomePage() {
                     </Container>
                 </section>
                 <section className="faq-section py-5" id="faq">
-                    <Container className="my-5 py-5">
+                    <Container className="">
                         <div className="section-title text-center mb-5">FAQs</div>
                         <Card className="faq-card p-4">
                             <Card.Body>
@@ -260,31 +281,31 @@ export default function HomePage() {
                                     <Accordion.Item eventKey="0">
                                         <Accordion.Header>How many cryptocurrencies do you support?</Accordion.Header>
                                         <Accordion.Body>
-                                        Onramp supports 300+ cryptocurrencies. You can check out the complete list of supported tokens here.
+                                            Onramp supports 300+ cryptocurrencies. You can check out the complete list of supported tokens here.
                                         </Accordion.Body>
                                     </Accordion.Item>
                                     <Accordion.Item eventKey="1">
                                         <Accordion.Header>Which fiat currencies does Onramp provide support for?</Accordion.Header>
                                         <Accordion.Body>
-                                        Currently Onramp supports Indian Rupee(INR), Turkish Lira(TRY), Emirati Dirham (AED), Mexican Peso (MXN),Vietnamese Dong (VND) with more currencies coming soon.
+                                            Currently Onramp supports Indian Rupee(INR), Turkish Lira(TRY), Emirati Dirham (AED), Mexican Peso (MXN),Vietnamese Dong (VND) with more currencies coming soon.
                                         </Accordion.Body>
                                     </Accordion.Item>
                                     <Accordion.Item eventKey="2">
                                         <Accordion.Header>Can I subsidize fees charged to users?</Accordion.Header>
                                         <Accordion.Body>
-                                        Yes. We support dapp level fees shown to users. Dapps can absorb part or full fees on behalf of the users.
+                                            Yes. We support dapp level fees shown to users. Dapps can absorb part or full fees on behalf of the users.
                                         </Accordion.Body>
                                     </Accordion.Item>
                                     <Accordion.Item eventKey="3">
                                         <Accordion.Header>Where does onramp.money source liquidity from?</Accordion.Header>
                                         <Accordion.Body>
-                                        We work with multiple liquidity providers across the globe to fetch the best rates of cryptocurrencies on Onramp.
+                                            We work with multiple liquidity providers across the globe to fetch the best rates of cryptocurrencies on Onramp.
                                         </Accordion.Body>
                                     </Accordion.Item>
                                     <Accordion.Item eventKey="4">
                                         <Accordion.Header>What all integration options do you supports?</Accordion.Header>
                                         <Accordion.Body>
-                                        We support:
+                                            We support:
                                             -- URL based integration (user is redirected to onramp.money page)
                                             -- Widget/iframe integration (oramp.money page opens inside dapp web page)
                                             -- White labelled integration (coming soon)
@@ -296,7 +317,7 @@ export default function HomePage() {
                     </Container>
                 </section>
                 <section className="register-section py-5">
-                    <Container className="my-5 py-5">
+                    <Container className="">
                         <Card className="register-card py-5">
                             <Card.Body className="text-center">
                                 <Card.Title className="text-center mb-5">Join the thousands of companies that use our platform</Card.Title>
