@@ -34,22 +34,49 @@ import Fly3Image from '../assets/images/animation/fly3.png';
 import GamefiImage from '../assets/images/gamefi.webp';
 import NFTImage from '../assets/images/nft.webp';
 import OfframpImage from '../assets/images/offramp.webp';
+import AvatarImage from '../assets/images/avatar/cz.png';
+import Avatar1Image from '../assets/images/avatar/eric.png';
+import Avatar2Image from '../assets/images/avatar/roger.png';
+import Avatar3Image from '../assets/images/avatar/sandeep.png';
+import News1Image from '../assets/images/news/news-1.png';
+import News2Image from '../assets/images/news/news-2.png';
+import News3Image from '../assets/images/news/news-3.jpg';
+import News4Image from '../assets/images/news/news-4.jpg';
+import News5Image from '../assets/images/news/news-5.jpg';
+import News6Image from '../assets/images/news/news-6.png';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 
 
 export default function HomePage() {
     const particlesInit = useCallback(async engine => {
-        console.log(engine);
-        // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-        // starting from v2 you can add only the features you need reducing the bundle size
-        //await loadFull(engine);
         await loadSlim(engine);
     }, []);
 
     const particlesLoaded = useCallback(async container => {
         await console.log(container);
     }, []);
+
+    const responsive = {
+        superLargeDesktop: {
+            // the naming can be any, depends on you.
+            breakpoint: { max: 4000, min: 3000 },
+            items: 5
+        },
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 3
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1
+        }
+    };
 
     const code = `import { createCheckoutWithCardElement } from '@paperxyz/js-client-sdk';
     <CheckoutWithCard
@@ -153,7 +180,7 @@ export default function HomePage() {
                                         <div className="animated-text text-white">
                                             <Typewriter
                                                 options={{
-                                                    strings: ['LIGHTENING', 'EXPAND', 'GROWTH', 'AMPLIFY'],
+                                                    strings: ['LIGHTNING', 'EXPAND', 'GROWTH', 'AMPLIFY'],
                                                     autoStart: true,
                                                     loop: true,
                                                 }}
@@ -198,7 +225,20 @@ export default function HomePage() {
                     </Row>
                 </Container>
             </section>
-
+            {/* <section>
+                <Container>
+                    <Carousel responsive={responsive}>
+                        <Card>
+                            <Card.Body>
+                                <Image src={Avatar1Image} width="50" />
+                                <Card.Title>Sandeep Nailwal</Card.Title>
+                                <Card.Subtitle>Co Founder Polygon</Card.Subtitle>
+                                <Card.Text>Thanks to Alchemy Pay, we can provide an essential gateway between fiat and crypto transactions. This development opens up new capital inroads that will propel users of polygon's DeFi ecosystem to the next level.</Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Carousel>;
+                </Container>
+            </section> */}
             <section className="earth-section" id="map">
                 <Container className="">
                     <div className="section-title text-center mb-5">NO MIDDLEMEN, NO INTERMEDIARIES</div>
@@ -245,10 +285,10 @@ export default function HomePage() {
                     <Container className="">
                         <div className="section-title text-center mb-5">Use case</div>
                         <Row>
-                        <Col sm={12} md={4} className="mb-3">
+                            <Col sm={12} md={4} className="mb-3">
                                 <Card className="main-card p-4">
                                     <Card.Body className="">
-                                    <Card.Img src={NFTImage} width="100%"/>
+                                        <Card.Img src={NFTImage} width="100%" />
                                         <Card.Title className="mb-3">NFTS</Card.Title>
                                         <Card.Text>Onboard users instantly from their bank into your NFT marketplace or NFT mint-drop</Card.Text>
                                     </Card.Body>
@@ -257,22 +297,83 @@ export default function HomePage() {
                             <Col sm={12} md={4} className="mb-3">
                                 <Card className="main-card p-4">
                                     <Card.Body className="">
-                                        <Card.Img src={GamefiImage} width="100%"/>
+                                        <Card.Img src={GamefiImage} width="100%" />
                                         <Card.Title className="mb-3">GAMEFI</Card.Title>
                                         <Card.Text>Supercharge your in-game economies with the most comprehensive crypto payment stack in the world</Card.Text>
                                     </Card.Body>
                                 </Card>
-                            </Col>                            
+                            </Col>
                             <Col sm={12} md={4} className="mb-3">
                                 <Card className="main-card p-4">
                                     <Card.Body className="">
-                                    <Card.Img src={OfframpImage} width="100%"/>
+                                        <Card.Img src={OfframpImage} width="100%" />
                                         <Card.Title className="mb-3">OFF-RAMP</Card.Title>
                                         <Card.Text>Discover the easiest way to cash out your crypto with GateFi's Off-Ramp solution</Card.Text>
                                     </Card.Body>
                                 </Card>
                             </Col>
                         </Row>
+                    </Container>
+                </section>
+                <section className="news-section py-5">
+                    <Container>
+                        <div className="section-title text-center mb-5">Latest News</div>
+                        <Carousel responsive={responsive}>
+                            <Card className="news-card py-3">
+                                <Card.Body>
+                                    <Card.Title className="fw-bold">02</Card.Title>
+                                    <Card.Subtitle>Nov, 2023</Card.Subtitle><hr />
+                                    <Card.Title>Update on Alchemy Pay’s Support in Turkey Earthquake Relief</Card.Title>
+                                    <Card.Text className="mb-3"> In response to the earthquake that struck Turkey in February, Alchemy Pay took immediate action ...</Card.Text>
+                                    <Card.Img src={News6Image} />
+                                </Card.Body>
+                            </Card>
+                            <Card className="news-card py-3">
+                                <Card.Body>
+                                    <Card.Title className="fw-bold">01</Card.Title>
+                                    <Card.Subtitle>Nov, 2023</Card.Subtitle><hr />
+                                    <Card.Title>1,500,000 $ACH Rewards! Get and Recharge Your First Crypto Card on Binance Marketplace</Card.Title>
+                                    <Card.Text className="mb-3"> Starting from November 1st, Cardrypto has initiated a voucher campaign in collaboration with Binance Pay ...</Card.Text>
+                                    <Card.Img src={News1Image} />
+                                </Card.Body>
+                            </Card>
+                            <Card className="news-card py-3">
+                                <Card.Body>
+                                    <Card.Title className="fw-bold">31</Card.Title>
+                                    <Card.Subtitle>Oct, 2023</Card.Subtitle><hr />
+                                    <Card.Title>Alchemy Pay丨 October Update 2023</Card.Title>
+                                    <Card.Text className="mb-3"> Headline News Alchemy Pay Facilitates Crypto Purchases Through ACH and Wire Transfers for USD Transactions </Card.Text>
+                                    <Card.Img src={News5Image} />
+                                </Card.Body>
+                            </Card>
+                            <Card className="news-card py-3">
+                                <Card.Body>
+                                    <Card.Title className="fw-bold">25</Card.Title>
+                                    <Card.Subtitle>Oct, 2023</Card.Subtitle><hr />
+                                    <Card.Title>Alchemy Pay’s Actions in Turkey...</Card.Title>
+                                    <Card.Text className="mb-3"> After adding support for domestic transfers for crypto purchases for Turkish users, AlchemyPay showcases its </Card.Text>
+                                    <Card.Img src={News4Image} />
+                                </Card.Body>
+                            </Card>
+                            <Card className="news-card py-3">
+                                <Card.Body>
+                                    <Card.Title className="fw-bold">24</Card.Title>
+                                    <Card.Subtitle>Oct, 2023</Card.Subtitle><hr />
+                                    <Card.Title>Let’s Meetup – Have a Blast at the Alchemy Pay Influencer Yacht Party in Istanbul</Card.Title>
+                                    <Card.Text className="mb-3"> Join us for the Alchemy Pay Influencer Yacht Party on November 11th, 2023, in the ...</Card.Text>
+                                    <Card.Img src={News5Image} />
+                                </Card.Body>
+                            </Card>
+                            <Card className="news-card py-3">
+                                <Card.Body>
+                                    <Card.Title className="fw-bold">23</Card.Title>
+                                    <Card.Subtitle>Oct, 2023</Card.Subtitle><hr />
+                                    <Card.Title>Mirror World Collaborates with Alchemy Pay for Seamless Test Ramp Integration</Card.Title>
+                                    <Card.Text className="mb-3"> Mirror World, the conversion engine focused on expanding digital asset ownership and publishing web3 games, ...</Card.Text>
+                                    <Card.Img src={News6Image} />
+                                </Card.Body>
+                            </Card>
+                        </Carousel>;
                     </Container>
                 </section>
                 <section className="faq-section py-5" id="faq">

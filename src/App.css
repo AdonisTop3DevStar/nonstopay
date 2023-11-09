@@ -368,3 +368,24 @@
 		opacity: 0;
 	}
 }
+
+
+.news-card {
+  background: none !important;
+  border: none !important;
+  color: white !important;
+}
+
+.news-card .card-title {
+  font-size: 24px;
+}
+
+.news-card .card-subtitle {
+  font-size: 16px !important;
+  font-weight: 500;
+}
+
+.news-card:hover {
+  background: #27ccb94b !important;
+}
+
