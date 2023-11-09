@@ -1,0 +1,165 @@
+.Header {
+  background: #03101370 !important;
+  border: 2px solid #0D3141 !important;
+  backdrop-filter: blur(100px);
+  height: 80px;
+  backdrop-filter: blur(5px);
+}
+
+.Header .nav-link {
+  color: white;
+}
+
+.main-btn {
+  background: #27CCB8 !important;
+  color: #031013 !important;
+  font-size: 16px;
+  font-weight: 500 !important;
+  box-shadow: 0 0 0 0 #27CCB8;
+}
+
+.slogan-section .slogan-title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #27CCB8 !important;
+}
+
+.slogan-section .slogan-text {
+  color: #95A1B4;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #27CCB8 !important;
+}
+
+.main-card {
+  background: #0513177c !important;
+  border: 1px solid #0D3141 !important;
+  color: white !important;
+}
+
+.main-card .card-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.main-card .card-text {
+  font-size: 16px;
+  text-align: justify;
+}
+
+.faq-card {
+  background: #0513177c !important;
+  border: 1px solid #0D3141 !important;
+  backdrop-filter: blur(50px);
+}
+
+.code-editor-windows {
+  border: 1px solid #0D3141;
+  border-radius: 5px;
+}
+
+.code-editor-windows .code-editor-window-title {
+  color: white;
+  font-size: 12px;
+  border-bottom: 1px solid #0D3141;
+  position: relative;
+}
+
+.code-editor-windows .code-editor-window-title .windows-controller {
+  position: absolute;
+  right: 3%;
+  color: rgba(255, 255, 255, 0.63);
+}
+
+.monaco-editor .margin {
+  border-right: 1px solid #0D3141;
+  background: #031013 !important;
+}
+
+.monaco-editor,
+.monaco-editor-background {
+  border-right: 1px solid #0D3141;
+  background: #031013 !important;
+}
+
+.minimap-decorations-layer {
+  background: #03101342 !important;
+}
+
+.faq-section .accordion .accordion-item {
+  background: none;
+  color: white;
+  border: none;
+}
+
+.accordion-item:first-of-type .accordion-button,
+.accordion-item:last-of-type .accordion-button {
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+.accordion-item:first-of-type .accordion-button:focus,
+.accordion-item:last-of-type .accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-item .accordion-button {
+  background: none !important;
+  color: white;
+  font-weight: bold;
+  border-bottom: 1px solid #0D3141 !important;
+  font-size: 20px;
+}
+
+.accordion-button:not(.collapsed) {
+  color: white !important;
+  font-weight: bold;
+}
+
+.accordion-item .accordion-body {
+  border-top-color: red;
+}
+
+.accordion-button::after {
+  background-image: none !important;
+  content: "+" !important;
+  text-align: center;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: none !important;
+  content: "-" !important;
+  text-align: center;
+  transform: none !important;
+}
+
+.accordion-button:not(.collapsed),
+.accordion-button:focus {
+  box-shadow: none !important;
+}
+
+.register-card {
+  border-radius: 10px;
+  border: 1px solid #0D3141 !important;
+  background: none !important;
+  background-image: linear-gradient(180deg, rgba(39, 204, 184, 0.23) 0%, rgba(5, 19, 23, 0.00) 100%) !important;
+  backdrop-filter: blur(2.5px);
+}
+
+.register-card .card-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+}
+
+.Footer .copyright {
+  font-size: 16px;
+  color: #27CCB8;
+}

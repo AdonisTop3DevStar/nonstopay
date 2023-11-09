@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Miniature Earth | Hologram Demo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="assets/style.css">
+	<link rel="stylesheet" href="assets/fly-style.css">
+	<script src="assets/positions.js"></script>
+	<script src="assets/miniature.earth.core.js"></script>
+
+	<script>
+
+		if (location.protocol == 'file:') {
+			alert('This demo does not work with the file protocol due to browser security restrictions.');
+		}
+
+
+		var myearth;
+		var sprites = [];
+
+		window.addEventListener('load', function () {
+
+			myearth = new Earth('myearth', {
+
+				location: { lat: 20, lng: 20 },
+
+				light: 'none',
+
+				mapImage: 'assets/hologram-map.svg',
+				transparent: true,
+
+				autoRotate: true,
+				autoRotateSpeed: 1.2,
+				autoRotateDelay: 100,
+				autoRotateStart: 2000,
+
+			});
+
+
+			myearth.addEventListener("ready", function () {
+
+				this.startAutoRotate();
+
+				// add 8 shine sprites
+
+				for (var i = 0; i < positions.length; i++) {
+					sprite = this.addSprite({
+						image: 'assets/hologram-shine.svg',
+						scale: 0.5,
+						// color : '#00a8ff',
+						offset: 0,
+						opacity: 0.5,
+						location: { lat: positions[i][4], lng: positions[i][5] },
+						hotspot: true,
+						hotspotRadius: 0.4,
+						hotspotHeight: 0.5,
+
+						index: i,
+						infoname: positions[i][0],
+						img1: positions[i][1],
+						img2: positions[i][2],
+						infoprice: positions[i][3],
+					});
+
+					sprite.addEventListener('mouseover', function () {
+
+						document.getElementById('popup-container').style.opacity = 1;
+						document.getElementById('infoname').innerHTML = this.infoname;
+						document.getElementById('img1').src = this.img1;
+						document.getElementById('img2').src = this.img2;
+						document.getElementById('infoprice').innerHTML = this.infoprice;
+
+
+						// this.color = 'red';
+
+					});
+
+					sprite.addEventListener('mouseout', function () {
+
+						// if ( this != startMarker && this != endMarker ) {
+						// 	this.color = '#00a8ff';
+						// }
+						document.getElementById('popup-container').style.opacity = 0;
+						// this.color = '#00a8ff';
+
+					});
+
+					sprites.push(sprite)
+
+					pulse(i);
+				}
+
+
+			});
+
+
+		});
+
+
+		function getRandomInt(min, max) {
+			min = Math.ceil(min);
+			max = Math.floor(max);
+			return Math.floor(Math.random() * (max - min)) + min;
+		}
+
+
+		function pulse(index) {
+			// var random_location = connections1[ getRandomInt(0, positions.length-1) ];
+			sprites[index].location = { lat: positions[index][4], lng: positions[index][5] };
+
+			sprites[index].animate('scale', 0.5, {
+				duration: 320, complete: function () {
+					this.animate('scale', 0.25, {
+						duration: 320, complete: function () {
+							setTimeout(function () { pulse(index); }, getRandomInt(1, 1000));
+						}
+					});
+				}
+			});
+		}
+
+
+
+		// locations conntected by lines and places where hologram shines appear
+
+		var connections1 = [
+			[59.651901245117, 17.918600082397, 41.8002778, 12.2388889],
+			[59.651901245117, 17.918600082397, 51.4706, -0.461941],
+
+			[13.681099891662598, 100.74700164794922, -6.1255698204, 106.65599823],
+			[13.681099891662598, 100.74700164794922, 28.566499710083008, 77.10310363769531],
+
+			[30.12190055847168, 31.40559959411621, -1.31923997402, 36.9277992249],
+			[30.12190055847168, 31.40559959411621, 25.2527999878, 55.3643989563],
+			[30.12190055847168, 31.40559959411621, 41.8002778, 12.2388889],
+
+			[28.566499710083008, 77.10310363769531, 7.180759906768799, 79.88410186767578],
+			[28.566499710083008, 77.10310363769531, 40.080101013183594, 116.58499908447266],
+			[28.566499710083008, 77.10310363769531, 25.2527999878, 55.3643989563],
+
+			[-33.9648017883, 18.6016998291, -1.31923997402, 36.9277992249],
+
+			[-1.31923997402, 36.9277992249, 25.2527999878, 55.3643989563],
+
+			[41.8002778, 12.2388889, 51.4706, -0.461941],
+			[41.8002778, 12.2388889, 40.471926, -3.56264],
+
+			[19.4363, -99.072098, 25.79319953918457, -80.29060363769531],
+			[19.4363, -99.072098, 33.94250107, -118.4079971],
+			[19.4363, -99.072098, -12.0219, -77.114304],
+
+			[-12.0219, -77.114304, -33.393001556396484, -70.78579711914062],
+			[-12.0219, -77.114304, -34.8222, -58.5358],
+			[-12.0219, -77.114304, -22.910499572799996, -43.1631011963],
+
+			[-34.8222, -58.5358, -33.393001556396484, -70.78579711914062],
+			[-34.8222, -58.5358, -22.910499572799996, -43.1631011963],
+
+			[22.3089008331, 113.915000916, 13.681099891662598, 100.74700164794922],
+			[22.3089008331, 113.915000916, 40.080101013183594, 116.58499908447266],
+			[22.3089008331, 113.915000916, 31.143400192260742, 121.80500030517578],
+
+			[35.552299, 139.779999, 40.080101013183594, 116.58499908447266],
+			[35.552299, 139.779999, 31.143400192260742, 121.80500030517578],
+
+			[33.94250107, -118.4079971, 40.63980103, -73.77890015],
+			[33.94250107, -118.4079971, 25.79319953918457, -80.29060363769531],
+			[33.94250107, -118.4079971, 49.193901062, -123.183998108],
+
+			[40.63980103, -73.77890015, 25.79319953918457, -80.29060363769531],
+			[40.63980103, -73.77890015, 51.4706, -0.461941],
+
+			[51.4706, -0.461941, 40.471926, -3.56264],
+
+			[40.080101013183594, 116.58499908447266, 31.143400192260742, 121.80500030517578],
+
+			[-33.94609832763672, 151.177001953125, -41.3272018433, 174.804992676],
+			[-33.94609832763672, 151.177001953125, -6.1255698204, 106.65599823],
+
+			[55.5914993286, 37.2615013123, 59.651901245117, 17.918600082397],
+			[55.5914993286, 37.2615013123, 41.8002778, 12.2388889],
+			[55.5914993286, 37.2615013123, 40.080101013183594, 116.58499908447266],
+			[55.5914993286, 37.2615013123, 25.2527999878, 55.3643989563],
+		];
+
+
+	</script>
+
+</head>
+
+<body>
+
+	<div id="myearth">
+		<div id="glow"></div>
+		<div id="popup-container">
+			<div id="popup-body">
+				<div id="popup-img">
+					<div style="display: flex; align-items: center; margin-bottom: 10px; justify-content: center;">
+						<span >
+							<img id="img2" src="./assets/img/flag/br.png" width="30" />
+						</span>
+						<span style="margin-left: 10px;"><strong id="infoname"></strong></span><br />
+					</div>
+					<img id="img1" src="./assets/img/area/amazon.png" width="200" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <div id="myearth">
+		<div id="glow"></div>
+		<div id="popup-container">
+			<div id="popup-body">
+				<div id="popup-img">
+					<img id="img1" src="./assets/img/area/amazon.png" width="100"/>
+				</div>
+				<div id="popup-content">
+					<div id="country-info">
+						<span><img id="img2" src="./assets/img/flag/br.png" width="40"/></span><span><strong id="infoname"></strong></span>
+					</div>
+					<div id="price-info">
+						<span>Selling for</span><span><img src="./assets/img/eth.png" width="30"/></span><span><strong id="infoprice"></strong></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+</body>
+
+</html>
