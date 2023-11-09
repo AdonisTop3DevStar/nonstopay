@@ -245,16 +245,7 @@ export default function HomePage() {
                     <Container className="">
                         <div className="section-title text-center mb-5">Use case</div>
                         <Row>
-                            <Col sm={12} md={4} className="mb-3">
-                                <Card className="main-card p-4">
-                                    <Card.Body className="">
-                                        <Card.Img src={GamefiImage} width="100%"/>
-                                        <Card.Title className="mb-3">GAMEFI</Card.Title>
-                                        <Card.Text>Supercharge your in-game economies with the most comprehensive crypto payment stack in the world</Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                            <Col sm={12} md={4} className="mb-3">
+                        <Col sm={12} md={4} className="mb-3">
                                 <Card className="main-card p-4">
                                     <Card.Body className="">
                                     <Card.Img src={NFTImage} width="100%"/>
@@ -263,6 +254,15 @@ export default function HomePage() {
                                     </Card.Body>
                                 </Card>
                             </Col>
+                            <Col sm={12} md={4} className="mb-3">
+                                <Card className="main-card p-4">
+                                    <Card.Body className="">
+                                        <Card.Img src={GamefiImage} width="100%"/>
+                                        <Card.Title className="mb-3">GAMEFI</Card.Title>
+                                        <Card.Text>Supercharge your in-game economies with the most comprehensive crypto payment stack in the world</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </Col>                            
                             <Col sm={12} md={4} className="mb-3">
                                 <Card className="main-card p-4">
                                     <Card.Body className="">
