@@ -10,7 +10,7 @@ export default function Header() {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="mx-auto">
+                    <Nav className="mx-auto d-none d-md-flex">
                         <Nav.Link href="#home">Home</Nav.Link>
                         <Nav.Link href="#trust">Trust by</Nav.Link>
                         {/* <Nav.Link href="#map">About</Nav.Link> */}
