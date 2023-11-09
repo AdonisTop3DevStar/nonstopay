@@ -31,6 +31,9 @@ import Cloud5Image from '../assets/images/animation/cloud5.png';
 import Fly1Image from '../assets/images/animation/fly1.png';
 import Fly2Image from '../assets/images/animation/fly2.png';
 import Fly3Image from '../assets/images/animation/fly3.png';
+import GamefiImage from '../assets/images/gamefi.webp';
+import NFTImage from '../assets/images/nft.webp';
+import OfframpImage from '../assets/images/offramp.webp';
 
 
 
@@ -244,27 +247,27 @@ export default function HomePage() {
                         <Row>
                             <Col sm={12} md={4} className="mb-3">
                                 <Card className="main-card p-4">
-                                    <Card.Body className="pt-5">
-                                        <Card.Img src={CodebaseImage} width="100%"/>
-                                        <Card.Title className="mt-5 pt-5 mb-3">GAMEFI</Card.Title>
+                                    <Card.Body className="">
+                                        <Card.Img src={GamefiImage} width="100%"/>
+                                        <Card.Title className="mb-3">GAMEFI</Card.Title>
                                         <Card.Text>Supercharge your in-game economies with the most comprehensive crypto payment stack in the world</Card.Text>
                                     </Card.Body>
                                 </Card>
                             </Col>
                             <Col sm={12} md={4} className="mb-3">
-                                <Card className="main-card p-4 pb-5">
-                                    <Card.Body className="pb-4">
-                                    <Card.Img src={CodebaseImage} width="100%"/>
-                                        <Card.Title className="mt-5 pt-5 mb-3">NFTS</Card.Title>
+                                <Card className="main-card p-4">
+                                    <Card.Body className="">
+                                    <Card.Img src={NFTImage} width="100%"/>
+                                        <Card.Title className="mb-3">NFTS</Card.Title>
                                         <Card.Text>Onboard users instantly from their bank into your NFT marketplace or NFT mint-drop</Card.Text>
                                     </Card.Body>
                                 </Card>
                             </Col>
                             <Col sm={12} md={4} className="mb-3">
-                                <Card className="main-card p-4 pb-5">
-                                    <Card.Body className="pt-4">
-                                    <Card.Img src={CodebaseImage} width="100%"/>
-                                        <Card.Title className="mt-5 pt-5 mb-3">OFF-RAMP</Card.Title>
+                                <Card className="main-card p-4">
+                                    <Card.Body className="">
+                                    <Card.Img src={OfframpImage} width="100%"/>
+                                        <Card.Title className="mb-3">OFF-RAMP</Card.Title>
                                         <Card.Text>Discover the easiest way to cash out your crypto with GateFi's Off-Ramp solution</Card.Text>
                                     </Card.Body>
                                 </Card>
