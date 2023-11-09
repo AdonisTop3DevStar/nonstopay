@@ -15,47 +15,27 @@ import TwitterIcon from '../assets/images/twitter.svg';
 import LinkedinIcon from '../assets/images/linkedin.png';
 import 'animate.css/animate.css';
 import 'css-doodle';
-import { useState, useEffect } from "react";
+import { useCallback } from "react";
 import { MainCard } from "../components/cards";
 import Editor from '@monaco-editor/react';
 import { Link } from "react-router-dom";
-
-const responsive = {
-    superLargeDesktop: {
-        // the naming can be any, depends on you.
-        breakpoint: { max: 4000, min: 3000 },
-        items: 4
-    },
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 2.5
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2
-    },
-    mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1
-    }
-};
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
 
 
 
 export default function HomePage() {
-    const [scrollY, setScrollY] = useState(0);
+    const particlesInit = useCallback(async engine => {
+        console.log(engine);
+        // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+        // starting from v2 you can add only the features you need reducing the bundle size
+        //await loadFull(engine);
+        await loadSlim(engine);
+    }, []);
 
-    useEffect(() => {
-        function handleScroll() {
-            setScrollY(window.scrollY);
-        }
-
-        // Attach the scroll event listener
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            // Detach the scroll event listener when component unmounts
-            window.removeEventListener('scroll', handleScroll);
-        };
+    const particlesLoaded = useCallback(async container => {
+        await console.log(container);
     }, []);
 
     const code = `import { createCheckoutWithCardElement } from '@paperxyz/js-client-sdk';
@@ -76,8 +56,82 @@ export default function HomePage() {
     return (
         <>
             <section className="top-bg">
+                <Particles
+                    id="tsparticles"
+                    init={particlesInit}
+                    loaded={particlesLoaded}
+                    options={{
+                        background: {
+                            color: {
+                                value: "#031013",
+                            },
+                        },
+                        fpsLimit: 120,
+                        interactivity: {
+                            events: {
+                                onClick: {
+                                    enable: true,
+                                    mode: "push",
+                                },
+                                onHover: {
+                                    enable: true,
+                                    mode: "repulse",
+                                },
+                                resize: true,
+                            },
+                            modes: {
+                                push: {
+                                    quantity: 4,
+                                },
+                                repulse: {
+                                    distance: 200,
+                                    duration: 0.4,
+                                },
+                            },
+                        },
+                        particles: {
+                            color: {
+                                value: "#27CCB8",
+                            },
+                            links: {
+                                color: "#0D3141",
+                                distance: 150,
+                                enable: true,
+                                opacity: 0.5,
+                                width: 1,
+                            },
+                            move: {
+                                direction: "none",
+                                enable: true,
+                                outModes: {
+                                    default: "bounce",
+                                },
+                                random: false,
+                                speed: 6,
+                                straight: false,
+                            },
+                            number: {
+                                density: {
+                                    enable: true,
+                                    area: 800,
+                                },
+                                value: 80,
+                            },
+                            opacity: {
+                                value: 0.5,
+                            },
+                            shape: {
+                                type: "circle",
+                            },
+                            size: {
+                                value: { min: 1, max: 5 },
+                            },
+                        },
+                        detectRetina: true,
+                    }}
+                />
                 <Header id="home" />
-                <section className="slogan-section py-5">
+                <section className="slogan-section py-5 position-relative">
                     <Container className="my-5 py-5">
                         <Row className="align-items-center py-5">
                             <Col sm={12} md={8} className="text-md-start text-center">
@@ -233,11 +287,11 @@ export default function HomePage() {
                     <Container className="py-5">
                         <Row>
                             <Col sm={12} md={6} className="mx-auto text-center">
-                                <Image src={LogoIcon} alt="logo" className="mb-3"/>
+                                <Image src={LogoIcon} alt="logo" className="mb-3" />
                                 <div className="d-flex aling-items-center justify-content-center mb-3">
-                                    <Link to='/' className="nav-link mx-2"><Image src={FacebookIcon} alt="facebook"/></Link>
-                                    <Link to='/' className="nav-link mx-2"><Image src={TwitterIcon} alt="facebook"/></Link>
-                                    <Link to='/' className="nav-link mx-2"><Image src={LinkedinIcon} alt="facebook"/></Link>
+                                    <Link to='/' className="nav-link mx-2"><Image src={FacebookIcon} alt="facebook" /></Link>
+                                    <Link to='/' className="nav-link mx-2"><Image src={TwitterIcon} alt="facebook" /></Link>
+                                    <Link to='/' className="nav-link mx-2"><Image src={LinkedinIcon} alt="facebook" /></Link>
                                 </div>
                                 <div className="copyright">Copyright ©2023 NONSTOPAY. | All Rights Reserved</div>
                             </Col>

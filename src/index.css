@@ -41,9 +41,9 @@ body .App {
     background-image: url('./src/assets/images/bg2.png');
     background-size: cover;
     backdrop-filter: blur(50px);
-    background-position: center right;
+    background-position: top right;
 }
 
 .trust-section {
-    background-image: linear-gradient(#020a0c, #031013);
+    /* background-image: linear-gradient(#020a0c, #031013); */
 }
