@@ -153,7 +153,7 @@ export default function HomePage() {
                                                     strings: ['LIGHTENING', 'EXPAND', 'GROWTH', 'AMPLIFY'],
                                                     autoStart: true,
                                                     loop: true,
-                                                  }}
+                                                }}
                                             />
                                         </div>
                                     </div>
@@ -162,7 +162,7 @@ export default function HomePage() {
                                 <Button className="main-btn rounded-5 border-0 shadow mb-5">Integrate Now</Button>
                             </Col>
                             <Col sm={12} md={6} className="text-center">
-                            <iframe src="/dist/index.html" width="100%" height="550px" title="Earth"></iframe>
+                                <iframe src="/dist/index.html" width="100%" height="550px" title="Earth"></iframe>
                                 <div className="animation-image position-relative">
                                     {/* <Image src={HeroImage} alt="hero" width="300" className="HeroImage"/>
                                     <Image src={Cloud1Image} alt="hero" width="100" className="Cloud1Image"/>
@@ -225,13 +225,28 @@ export default function HomePage() {
                         <div className="section-title text-center mb-5">Use case</div>
                         <Row>
                             <Col sm={12} md={4} className="mb-3">
-                                <MainCard />
+                                <Card className="main-card p-4">
+                                    <Card.Body className="pt-5">
+                                        <Card.Title className="mt-5 pt-5 mb-3">GAMEFI</Card.Title>
+                                        <Card.Text>Supercharge your in-game economies with the most comprehensive crypto payment stack in the world</Card.Text>
+                                    </Card.Body>
+                                </Card>
                             </Col>
                             <Col sm={12} md={4} className="mb-3">
-                                <MainCard />
+                                <Card className="main-card p-4 pb-5">
+                                    <Card.Body className="pt-5">
+                                        <Card.Title className="mt-5 pt-5 mb-3">NFTS</Card.Title>
+                                        <Card.Text>Onboard users instantly from their bank into your NFT marketplace or NFT mint-drop</Card.Text>
+                                    </Card.Body>
+                                </Card>
                             </Col>
                             <Col sm={12} md={4} className="mb-3">
-                                <MainCard />
+                                <Card className="main-card p-4 pb-5">
+                                    <Card.Body className="pt-5">
+                                        <Card.Title className="mt-5 pt-5 mb-3">OFF-RAMP</Card.Title>
+                                        <Card.Text>Discover the easiest way to cash out your crypto with GateFi's Off-Ramp solution</Card.Text>
+                                    </Card.Body>
+                                </Card>
                             </Col>
                         </Row>
                     </Container>
@@ -245,61 +260,34 @@ export default function HomePage() {
                                     <Accordion.Item eventKey="0">
                                         <Accordion.Header>How many cryptocurrencies do you support?</Accordion.Header>
                                         <Accordion.Body>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                            culpa qui officia deserunt mollit anim id est laborum.
+                                        Onramp supports 300+ cryptocurrencies. You can check out the complete list of supported tokens here.
                                         </Accordion.Body>
                                     </Accordion.Item>
                                     <Accordion.Item eventKey="1">
                                         <Accordion.Header>Which fiat currencies does Onramp provide support for?</Accordion.Header>
                                         <Accordion.Body>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                            culpa qui officia deserunt mollit anim id est laborum.
+                                        Currently Onramp supports Indian Rupee(INR), Turkish Lira(TRY), Emirati Dirham (AED), Mexican Peso (MXN),Vietnamese Dong (VND) with more currencies coming soon.
                                         </Accordion.Body>
                                     </Accordion.Item>
                                     <Accordion.Item eventKey="2">
                                         <Accordion.Header>Can I subsidize fees charged to users?</Accordion.Header>
                                         <Accordion.Body>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                            culpa qui officia deserunt mollit anim id est laborum.
+                                        Yes. We support dapp level fees shown to users. Dapps can absorb part or full fees on behalf of the users.
                                         </Accordion.Body>
                                     </Accordion.Item>
                                     <Accordion.Item eventKey="3">
                                         <Accordion.Header>Where does onramp.money source liquidity from?</Accordion.Header>
                                         <Accordion.Body>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                            culpa qui officia deserunt mollit anim id est laborum.
+                                        We work with multiple liquidity providers across the globe to fetch the best rates of cryptocurrencies on Onramp.
                                         </Accordion.Body>
                                     </Accordion.Item>
                                     <Accordion.Item eventKey="4">
                                         <Accordion.Header>What all integration options do you supports?</Accordion.Header>
                                         <Accordion.Body>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                            culpa qui officia deserunt mollit anim id est laborum.
+                                        We support:
+                                            -- URL based integration (user is redirected to onramp.money page)
+                                            -- Widget/iframe integration (oramp.money page opens inside dapp web page)
+                                            -- White labelled integration (coming soon)
                                         </Accordion.Body>
                                     </Accordion.Item>
                                 </Accordion>
