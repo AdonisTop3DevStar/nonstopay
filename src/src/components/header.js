@@ -11,13 +11,12 @@ export default function Header() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto">
-                        {/* <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#tokenomics">Trust by</Nav.Link>
-                        <Nav.Link href="#about">About</Nav.Link>
-                        <Nav.Link href="#testimonials">Testimonials</Nav.Link>
-                        <Nav.Link href="#roadmap">Roadmap</Nav.Link>
-                        <Nav.Link href="/">FAQ</Nav.Link>
-                        <Nav.Link href="/">How to buy</Nav.Link> */}
+                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="#trust">Trust by</Nav.Link>
+                        {/* <Nav.Link href="#map">About</Nav.Link> */}
+                        <Nav.Link href="#codebase">API Integration</Nav.Link>
+                        <Nav.Link href="#usecase">UseCase</Nav.Link>
+                        <Nav.Link href="#faq">FAQ</Nav.Link>
                     </Nav>
                     <Nav className="ms-auto my-4 my-md-0">
                         <Button className="rounded-5 main-btn border-0">Integrate Now</Button>

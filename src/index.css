@@ -10,24 +10,59 @@ body .App {
 }
 
 @-webkit-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
 }
+
 @-moz-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
 }
+
 @-o-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
 }
+
 @keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
 }
 
 .top-bg {
@@ -44,6 +79,68 @@ body .App {
     background-position: top right;
 }
 
-.trust-section {
-    /* background-image: linear-gradient(#020a0c, #031013); */
+.Typewriter .Typewriter__cursor {
+    color: transparent;
+}
+
+
+.Cloud1Image,
+.Cloud2Image,
+.Cloud3Image,
+.Cloud4Image,
+.Cloud5Image,
+.Fly1Image,
+.Fly2Image,
+.Fly3Image {
+    position: absolute;
+}
+
+.HeroImage {
+    /* top: 0;
+    left: 0; */
+    animation: Cloud1Image 4s infinite;
+    animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+@keyframes Cloud1Image {
+    0%, 25%{ top: 30px; }
+    25%, 50%{ top: -16px; }
+    50%, 75%{ top:-16px; }
+    75%, 100%{ top:0px; }
+  }
+
+.Cloud2Image {
+    top: 70%;
+    left: 10%;
+}
+
+.Cloud3Image {
+    top: 80%;
+    left: 60%;
+}
+
+.Cloud4Image {
+    top: 80%;
+    left: 80%;
+}
+
+.Cloud5Image {
+    top: 20%;
+    left: 60%;
+}
+
+.Fly1Image {
+    top: -10%;
+    left: 20%;
+}
+
+.Fly2Image {
+    top: -10%;
+    left: 60%;
+}
+
+.Fly1Image {
+    top: -10%;
+    left: 20%;
 }

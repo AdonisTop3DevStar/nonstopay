@@ -21,6 +21,16 @@ import Editor from '@monaco-editor/react';
 import { Link } from "react-router-dom";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
+import Typewriter from 'typewriter-effect';
+import HeroImage from '../assets/images/animation/hero.png';
+import Cloud1Image from '../assets/images/animation/cloud1.png';
+import Cloud2Image from '../assets/images/animation/cloud2.png';
+import Cloud3Image from '../assets/images/animation/cloud3.png';
+import Cloud4Image from '../assets/images/animation/cloud4.png';
+import Cloud5Image from '../assets/images/animation/cloud5.png';
+import Fly1Image from '../assets/images/animation/fly1.png';
+import Fly2Image from '../assets/images/animation/fly2.png';
+import Fly3Image from '../assets/images/animation/fly3.png';
 
 
 
@@ -134,19 +144,43 @@ export default function HomePage() {
                 <section className="slogan-section py-5 position-relative">
                     <Container className="my-5 py-5">
                         <Row className="align-items-center py-5">
-                            <Col sm={12} md={8} className="text-md-start text-center">
-                                <div className="slogan-title mb-5 text-white">LIGHTENING  Your Business Payment Processing</div>
+                            <Col sm={12} md={6} className="text-md-start text-center">
+                                <div className="slogan-title mb-5 text-white">
+                                    <div className="subcontent">
+                                        <div className="animated-text text-white">
+                                            <Typewriter
+                                                options={{
+                                                    strings: ['LIGHTENING', 'EXPAND', 'GROWTH', 'AMPLIFY'],
+                                                    autoStart: true,
+                                                    loop: true,
+                                                  }}
+                                            />
+                                        </div>
+                                    </div>
+                                    <div>Your Business Payment Processing</div></div>
                                 <div className="slogan-text mb-5">Speed up your payment and  open a new page for your business today!</div>
                                 <Button className="main-btn rounded-5 border-0 shadow mb-5">Integrate Now</Button>
                             </Col>
-                            <Col sm={12} md={4} className="text-center">
-                                <Image src={CodebaseImage} width="100%" alt="banner" />
+                            <Col sm={12} md={6} className="text-center">
+                            <iframe src="/dist/index.html" width="100%" height="550px" title="Earth"></iframe>
+                                <div className="animation-image position-relative">
+                                    {/* <Image src={HeroImage} alt="hero" width="300" className="HeroImage"/>
+                                    <Image src={Cloud1Image} alt="hero" width="100" className="Cloud1Image"/>
+                                    <Image src={Cloud2Image} alt="hero" width="150" className="Cloud2Image"/>
+                                    <Image src={Cloud3Image} alt="hero" width="100" className="Cloud3Image"/>
+                                    <Image src={Cloud4Image} alt="hero" width="150" className="Cloud4Image"/>
+                                    <Image src={Cloud5Image} alt="hero" width="100" className="Cloud5Image"/>
+                                    <Image src={Fly1Image} alt="hero" width="70" className="Fly1Image"/>
+                                    <Image src={Fly2Image} alt="hero" width="20" className="Fly2Image"/>
+                                    <Image src={Fly3Image} alt="hero" width="30" className="Fly3Image"/> */}
+
+                                </div>
                             </Col>
                         </Row>
                     </Container>
                 </section>
             </section>
-            <section className="trust-section py-5">
+            <section className="trust-section py-5" id="trust">
                 <Container className="my-5 py-5">
                     <div className="section-title text-center mb-5">Trusted By</div>
                     <Row>
@@ -161,13 +195,13 @@ export default function HomePage() {
                     </Row>
                 </Container>
             </section>
-            <section className="earth-section">
+            <section className="earth-section" id="map">
                 <Container className="my-5 py-5">
                     <div className="section-title text-center mb-5">NO MIDDLEMEN, NO INTERMEDIARIES</div>
                     <iframe src="/earth.htm" width="100%" height="650px" title="Earth"></iframe>
                 </Container>
             </section>
-            <section className="codebase-section py-5">
+            <section className="codebase-section py-5" id="codebase">
                 <Container className="my-5 py-5">
                     <div className="section-title text-center mb-5">A few lines of code, that's all</div>
                     <Row>
@@ -185,24 +219,24 @@ export default function HomePage() {
                     </Row>
                 </Container>
             </section>
-            <section className="bottom-bg">
+            <section className="bottom-bg" id="usecase">
                 <section className="main-card-section py-5">
                     <Container className="my-5 py-5">
                         <div className="section-title text-center mb-5">Use case</div>
                         <Row>
-                            <Col sm={12} md={4}>
+                            <Col sm={12} md={4} className="mb-3">
                                 <MainCard />
                             </Col>
-                            <Col sm={12} md={4}>
+                            <Col sm={12} md={4} className="mb-3">
                                 <MainCard />
                             </Col>
-                            <Col sm={12} md={4}>
+                            <Col sm={12} md={4} className="mb-3">
                                 <MainCard />
                             </Col>
                         </Row>
                     </Container>
                 </section>
-                <section className="faq-section py-5">
+                <section className="faq-section py-5" id="faq">
                     <Container className="my-5 py-5">
                         <div className="section-title text-center mb-5">FAQs</div>
                         <Card className="faq-card p-4">
