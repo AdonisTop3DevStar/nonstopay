@@ -9,7 +9,7 @@ import TrustIcon7 from '../assets/images/pay/bitandpay.png';
 import TrustIcon8 from '../assets/images/pay/nftuloan.png';
 import 'animate.css/animate.css';
 import 'css-doodle';
-import { MainCard, NewsCard } from "../components/cards";
+import { MainCard} from "../components/cards";
 import Typewriter from 'typewriter-effect';
 import "react-multi-carousel/lib/styles.css";
 import { CodeEditor } from "../components/layout/codebase";
@@ -20,7 +20,7 @@ import { MainButton, SectionTitle } from "../components";
 import { FAQAccordion } from "../components/accordion";
 import Footer from "../components/layout/footer";
 // import { Workflow } from "../components/workflow";
-import { Step1Img, Step2Img, Step3Img } from "../assets";
+import { Step1Img} from "../assets";
 
 
 
