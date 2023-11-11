@@ -19,7 +19,7 @@ import { FAQAccordionData, MainCardData, NewsData, PaymentMethodData } from "../
 import { MainButton, SectionTitle } from "../components";
 import { FAQAccordion } from "../components/accordion";
 import Footer from "../components/layout/footer";
-import { Workflow } from "../components/workflow";
+// import { Workflow } from "../components/workflow";
 import { Step1Img, Step2Img, Step3Img } from "../assets";
 
 
@@ -82,7 +82,6 @@ export default function HomePage() {
             <section className="workflow-section py-5" id="workflow">
                 <Container>
                     <SectionTitle title="HOW IT WORKS?" />
-                    {/* <Workflow/> */}
                     <div className="value-section">
                         <div className="container-sliders-wrapper">
                             <Row className="workflow-banner align-items-center">
@@ -96,7 +95,7 @@ export default function HomePage() {
                                     <div className="step-title">01</div>
                                 </Col>
                             </Row>
-                            <Row className="workflow-banner align-items-center">
+                            {/* <Row className="workflow-banner align-items-center">
                                 <Col md={3} className="workflow-banner-left d-none d-md-block">
                                     <div className="step-number">02</div>
                                     <div className="step-title">Waiting to Process</div>
@@ -117,7 +116,7 @@ export default function HomePage() {
                                 <Col md={3} className="workflow-banner-right d-none  d-md-block">
                                     <div className="step-title">03</div>
                                 </Col>
-                            </Row>
+                            </Row> */}
                         </div>
                     </div>
                     <div className="text-center">
