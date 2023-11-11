@@ -87,24 +87,24 @@ export const Workflow = () => {
     const component = useRef();
   const slider = useRef();
 
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      let panels = gsap.utils.toArray(".workflow-banner");
-      gsap.to(panels, {
-        xPercent: -100 * (panels.length - 1),
-        ease: "none",
-        scrollTrigger: {
-          trigger: slider.current,
-          pin: true,
-          scrub: 1,
-          snap: 1 / (panels.length - 1),
-        //   end: () => "+=" + slider.current.offsetWidth,
-          markers: true
-        }
-      });
-    }, component);
-    return () => ctx.revert();
-  });
+//   useLayoutEffect(() => {
+//     let ctx = gsap.context(() => {
+//       let panels = gsap.utils.toArray(".workflow-banner");
+//       gsap.to(panels, {
+//         xPercent: -100 * (panels.length - 1),
+//         ease: "none",
+//         scrollTrigger: {
+//           trigger: slider.current,
+//           pin: true,
+//           scrub: 1,
+//           snap: 1 / (panels.length - 1),
+//         //   end: () => "+=" + slider.current.offsetWidth,
+//           markers: true
+//         }
+//       });
+//     }, component);
+//     return () => ctx.revert();
+//   });
     return (
         <div className="value-section">
             <div className="container-sliders-wrapper">
