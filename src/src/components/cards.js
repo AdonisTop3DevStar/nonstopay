@@ -1,11 +1,26 @@
 import { Card } from "react-bootstrap"
 
-export const MainCard = () => {
+export const MainCard = ({ title, image, description }) => {
     return (
-        <Card className="main-card p-4">
-            <Card.Body className="pt-5">
-                <Card.Title className="mt-5 pt-5 mb-3">Usecase Title</Card.Title>
-                <Card.Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </Card.Text>
+        <Card className="main-card p-4 text-center">
+            <Card.Body className="">
+                <Card.Img src={image} alt="main-card-image mb-5" className="main-card-image"/>
+                <Card.Title className="mb-3 text-start">{title}</Card.Title>
+                <Card.Text>{description}</Card.Text>
+            </Card.Body>
+        </Card>
+    )
+}
+
+export const NewsCard = ({ title, image, description, date }) => {
+    return (
+        <Card className="news-card px-3">
+            <Card.Body>
+                <Card.Title className="fw-bold">02</Card.Title>
+                <Card.Subtitle>Nov, 2023</Card.Subtitle><hr />
+                <Card.Title>{title}</Card.Title>
+                <Card.Text className="mb-3">{description}</Card.Text>
+                <Card.Img src={image} width="300" height="150"/>
             </Card.Body>
         </Card>
     )

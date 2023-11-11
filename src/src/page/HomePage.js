@@ -1,5 +1,4 @@
-import { Container, Row, Col, Button, Image, Card, Badge, Nav, Accordion } from "react-bootstrap";
-import Header from "../components/header";
+import { Container, Row, Col, Button, Image, Card, Accordion } from "react-bootstrap";
 import TrustIcon1 from '../assets/images/pay/nocode3.png';
 import TrustIcon2 from '../assets/images/pay/exclusiv.png';
 import TrustIcon3 from '../assets/images/pay/praxis.png';
@@ -8,169 +7,29 @@ import TrustIcon5 from '../assets/images/pay/soft2bet.png';
 import TrustIcon6 from '../assets/images/pay/netoplpay.png';
 import TrustIcon7 from '../assets/images/pay/bitandpay.png';
 import TrustIcon8 from '../assets/images/pay/nftuloan.png';
-import CodebaseImage from '../assets/images/codebase.png';
-import LogoIcon from '../assets/images/logo.png';
-import FacebookIcon from '../assets/images/facebook.svg';
-import TwitterIcon from '../assets/images/twitter.svg';
-import LinkedinIcon from '../assets/images/linkedin.png';
 import 'animate.css/animate.css';
 import 'css-doodle';
-import { useCallback } from "react";
-import { MainCard } from "../components/cards";
-import Editor from '@monaco-editor/react';
-import { Link } from "react-router-dom";
-import Particles from "react-tsparticles";
-import { loadSlim } from "tsparticles-slim";
+import { MainCard, NewsCard } from "../components/cards";
 import Typewriter from 'typewriter-effect';
-import HeroImage from '../assets/images/animation/hero.png';
-import Cloud1Image from '../assets/images/animation/cloud1.png';
-import Cloud2Image from '../assets/images/animation/cloud2.png';
-import Cloud3Image from '../assets/images/animation/cloud3.png';
-import Cloud4Image from '../assets/images/animation/cloud4.png';
-import Cloud5Image from '../assets/images/animation/cloud5.png';
-import Fly1Image from '../assets/images/animation/fly1.png';
-import Fly2Image from '../assets/images/animation/fly2.png';
-import Fly3Image from '../assets/images/animation/fly3.png';
-import GamefiImage from '../assets/images/gamefi.webp';
-import NFTImage from '../assets/images/nft.webp';
-import OfframpImage from '../assets/images/offramp.webp';
-import AvatarImage from '../assets/images/avatar/cz.png';
-import Avatar1Image from '../assets/images/avatar/eric.png';
-import Avatar2Image from '../assets/images/avatar/roger.png';
-import Avatar3Image from '../assets/images/avatar/sandeep.png';
-import News1Image from '../assets/images/news/news-1.png';
-import News2Image from '../assets/images/news/news-2.png';
-import News3Image from '../assets/images/news/news-3.jpg';
-import News4Image from '../assets/images/news/news-4.jpg';
-import News5Image from '../assets/images/news/news-5.jpg';
-import News6Image from '../assets/images/news/news-6.png';
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { CodeEditor } from "../components/layout/codebase";
+import { BannerAnimation, FramerBackground, ParticlesBackground } from "../components/animations";
+import { NewsCardCarousel, PaymentCardCarousel } from "../components/carousels";
+import { FAQAccordionData, MainCardData, NewsData, PaymentMethodData } from "../assets/contents";
+import { MainButton, SectionTitle } from "../components";
+import { FAQAccordion } from "../components/accordion";
+import Footer from "../components/layout/footer";
+import { Workflow } from "../components/workflow";
+import { Step1Img, Step2Img, Step3Img } from "../assets";
 
 
 
 export default function HomePage() {
-    const particlesInit = useCallback(async engine => {
-        await loadSlim(engine);
-    }, []);
 
-    const particlesLoaded = useCallback(async container => {
-        await console.log(container);
-    }, []);
-
-    const responsive = {
-        superLargeDesktop: {
-            // the naming can be any, depends on you.
-            breakpoint: { max: 4000, min: 3000 },
-            items: 5
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 3
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 2
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1
-        }
-    };
-
-    const code = `import { createCheckoutWithCardElement } from '@paperxyz/js-client-sdk';
-    <CheckoutWithCard
-    sdkClientSecret="GrUw7rkm..."
-    onPaymentSuccess={(result) => console.log(result)}
-    onReview={(result) => console.log(result)}
-    onError={(error) => console.error(error)}
-    options={{
-        colorBackground: '#fefae0',
-        colorPrimary: '#606c38',
-        colorText: '#283618',
-        borderRadius: 6,
-        inputBackgroundColor: '#faedcd',
-        inputBorderColor: '#d4a373',
-    }}
-    />;`
     return (
         <>
             <section className="top-bg">
-                <Particles
-                    id="tsparticles"
-                    init={particlesInit}
-                    loaded={particlesLoaded}
-                    options={{
-                        background: {
-                            color: {
-                                value: "#031013",
-                            },
-                        },
-                        fpsLimit: 120,
-                        interactivity: {
-                            events: {
-                                onClick: {
-                                    enable: true,
-                                    mode: "push",
-                                },
-                                onHover: {
-                                    enable: true,
-                                    mode: "repulse",
-                                },
-                                resize: true,
-                            },
-                            modes: {
-                                push: {
-                                    quantity: 4,
-                                },
-                                repulse: {
-                                    distance: 200,
-                                    duration: 0.4,
-                                },
-                            },
-                        },
-                        particles: {
-                            color: {
-                                value: "#27CCB8",
-                            },
-                            links: {
-                                color: "#0D3141",
-                                distance: 150,
-                                enable: true,
-                                opacity: 0.5,
-                                width: 1,
-                            },
-                            move: {
-                                direction: "none",
-                                enable: true,
-                                outModes: {
-                                    default: "bounce",
-                                },
-                                random: false,
-                                speed: 6,
-                                straight: false,
-                            },
-                            number: {
-                                density: {
-                                    enable: true,
-                                    area: 800,
-                                },
-                                value: 80,
-                            },
-                            opacity: {
-                                value: 0.5,
-                            },
-                            shape: {
-                                type: "circle",
-                            },
-                            size: {
-                                value: { min: 1, max: 5 },
-                            },
-                        },
-                        detectRetina: true,
-                    }}
-                />
-                <Header id="home" />
+                <ParticlesBackground />
                 <section className="slogan-section py-5 position-relative">
                     <Container className="py-5">
                         <Row className="align-items-center py-5">
@@ -192,19 +51,14 @@ export default function HomePage() {
                                 <Button className="main-btn rounded-5 border-0 shadow mb-5">Integrate Now</Button>
                             </Col>
                             <Col sm={12} md={6} className="text-center">
-                                <Image src={CodebaseImage} alt="hero" width="100%" className="HeroImage" />
-                                {/* <iframe src="/dist/index.html" width="100%" height="550px" title="Earth"></iframe>
-                                <div className="animation-image position-relative">
-                                    <Image src={Cloud1Image} alt="hero" width="100" className="Cloud1Image"/>
-                                    <Image src={Cloud2Image} alt="hero" width="150" className="Cloud2Image"/>
-                                    <Image src={Cloud3Image} alt="hero" width="100" className="Cloud3Image"/>
-                                    <Image src={Cloud4Image} alt="hero" width="150" className="Cloud4Image"/>
-                                    <Image src={Cloud5Image} alt="hero" width="100" className="Cloud5Image"/>
-                                    <Image src={Fly1Image} alt="hero" width="70" className="Fly1Image"/>
-                                    <Image src={Fly2Image} alt="hero" width="20" className="Fly2Image"/>
-                                    <Image src={Fly3Image} alt="hero" width="30" className="Fly3Image"/>
-
-                                </div> */}
+                                <BannerAnimation />
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col sm={12} className="text-center">
+                                <PaymentCardCarousel data={PaymentMethodData} />
+                                <div className="sub-slogan-title my-5 text-white">FUEL YOUR BUSINESS WITH USDC</div>
+                                <MainButton title="Start Now" />
                             </Col>
                         </Row>
                     </Container>
@@ -212,7 +66,7 @@ export default function HomePage() {
             </section>
             <section className="trust-section py-5" id="trust">
                 <Container className="">
-                    <div className="section-title text-center mb-5">Trusted By</div>
+                    <SectionTitle title="Trusted By" />
                     <Row>
                         <Col sm={12} md={3} className="mb-4 text-center"><Image src={TrustIcon1} width="200" alt="nocode3.xyz" /></Col>
                         <Col sm={12} md={3} className="mb-4 text-center"><Image src={TrustIcon2} width="200" alt="exclusiv.ly" /></Col>
@@ -225,57 +79,66 @@ export default function HomePage() {
                     </Row>
                 </Container>
             </section>
-            {/* <section>
+            <section className="workflow-section py-5" id="workflow">
                 <Container>
-                    <Carousel responsive={responsive}>
-                        <Card>
-                            <Card.Body>
-                                <Image src={Avatar1Image} width="50" />
-                                <Card.Title>Sandeep Nailwal</Card.Title>
-                                <Card.Subtitle>Co Founder Polygon</Card.Subtitle>
-                                <Card.Text>Thanks to Alchemy Pay, we can provide an essential gateway between fiat and crypto transactions. This development opens up new capital inroads that will propel users of polygon's DeFi ecosystem to the next level.</Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Carousel>;
+                    <SectionTitle title="HOW IT WORKS?" />
+                    {/* <Workflow/> */}
+                    <div className="value-section">
+                        <div className="container-sliders-wrapper">
+                            <Row className="workflow-banner align-items-center">
+                                <Col md={3} className="workflow-banner-left d-none d-md-block">
+                                    <div className="step-number">01</div>
+                                    <div className="step-title">Submit Information</div>
+                                    <div className="step-subtitle">Submit Information</div>
+                                </Col>
+                                <Col md={6} sm={12} className="text-center"><Image src={Step1Img} width="100%" /></Col>
+                                <Col md={3} className="workflow-banner-right d-none  d-md-block">
+                                    <div className="step-title">01</div>
+                                </Col>
+                            </Row>
+                            <Row className="workflow-banner align-items-center">
+                                <Col md={3} className="workflow-banner-left d-none d-md-block">
+                                    <div className="step-number">02</div>
+                                    <div className="step-title">Waiting to Process</div>
+                                    <div className="step-subtitle">Waiting to Process</div>
+                                </Col>
+                                <Col md={6} sm={12} className="text-center"><Image src={Step2Img} className="w-100" /></Col>
+                                <Col md={3} className="workflow-banner-right d-none  d-md-block">
+                                    <div className="step-title">02</div>
+                                </Col>
+                            </Row>
+                            <Row className="workflow-banner align-items-center">
+                                <Col md={3} className="workflow-banner-left d-none d-md-block">
+                                    <div className="step-number">03</div>
+                                    <div className="step-title">Transaction Approved</div>
+                                    <div className="step-subtitle">Transaction Approved</div>
+                                </Col>
+                                <Col md={6} sm={12} className="text-center"><Image src={Step3Img} className="w-100" /></Col>
+                                <Col md={3} className="workflow-banner-right d-none  d-md-block">
+                                    <div className="step-title">03</div>
+                                </Col>
+                            </Row>
+                        </div>
+                    </div>
+                    <div className="text-center">
+                        <MainButton title="Integrate API" />
+                    </div>
                 </Container>
-            </section> */}
+            </section>
             <section className="earth-section" id="map">
                 <Container className="">
-                    <div className="section-title text-center mb-5">NO MIDDLEMEN, NO INTERMEDIARIES</div>
+                    <SectionTitle title="NO MIDDLEMEN, NO INTERMEDIARIES" />
                     <div className="text-center text-white mb-5">Taking your business to scale requires it to accept payments from all over the globe. NONSTOPAY drives your expansion – fast, safe, and perfectly convenient.</div>
                     <iframe src="/earth.htm" width="100%" height="650px" title="Earth"></iframe>
                 </Container>
             </section>
-            <section className="codebase-section py-5" id="codebase">
-                <div class="bg-container">
-                    <div class="frame"></div>
-                    <div class="frame"></div>
-                    <div class="frame"></div>
-                    <div class="frame"></div>
-                    <div class="frame"></div>
-                    <div class="frame"></div>
-                    <div class="frame"></div>
-                    <div class="frame"></div>
-                    <div class="frame"></div>
-                    <div class="frame"></div>
-                    <div class="frame"></div>
-                    <div class="frame"></div>
-                    <div class="frame"></div>
-                    <div class="frame"></div>
-                </div>
+            <section className="codebase-section py-5 overflow-hidden" id="codebase">
+                <FramerBackground />
                 <Container className="">
-                    <div className="section-title text-center mb-5">A few lines of code, that's all</div>
+                    <SectionTitle title="A few lines of code, that's all" />
                     <Row>
                         <Col sm={12} md={8} className="mx-auto">
-                            <div className="code-editor-windows">
-                                <div className="text-center code-editor-window-title py-2">Editor<span className="windows-controller">● ● ●</span></div>
-                                <Editor
-                                    height="35vh"
-                                    theme="vs-dark"
-                                    defaultLanguage="javascript"
-                                    defaultValue={code}
-                                />
-                            </div>
+                            <CodeEditor />
                         </Col>
                     </Row>
                 </Container>
@@ -283,139 +146,30 @@ export default function HomePage() {
             <section className="bottom-bg" id="usecase">
                 <section className="main-card-section py-5">
                     <Container className="">
-                        <div className="section-title text-center mb-5">Use case</div>
-                        <Row>
-                            <Col sm={12} md={4} className="mb-3">
-                                <Card className="main-card p-4">
-                                    <Card.Body className="">
-                                        <Card.Img src={NFTImage} width="100%" />
-                                        <Card.Title className="mb-3">NFTS</Card.Title>
-                                        <Card.Text>Onboard users instantly from their bank into your NFT marketplace or NFT mint-drop</Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                            <Col sm={12} md={4} className="mb-3">
-                                <Card className="main-card p-4">
-                                    <Card.Body className="">
-                                        <Card.Img src={GamefiImage} width="100%" />
-                                        <Card.Title className="mb-3">GAMEFI</Card.Title>
-                                        <Card.Text>Supercharge your in-game economies with the most comprehensive crypto payment stack in the world</Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                            <Col sm={12} md={4} className="mb-3">
-                                <Card className="main-card p-4">
-                                    <Card.Body className="">
-                                        <Card.Img src={OfframpImage} width="100%" />
-                                        <Card.Title className="mb-3">OFF-RAMP</Card.Title>
-                                        <Card.Text>Discover the easiest way to cash out your crypto with GateFi's Off-Ramp solution</Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
+                        <SectionTitle title="Use case" />
+                        <Row className="align-items-center">
+                            {
+                                MainCardData.map((item, index) => (
+                                    <Col sm={12} md={4} className="mb-5 px-3">
+                                        <MainCard title={item.title} description={item.description} image={item.image} />
+                                    </Col>
+                                ))
+                            }
                         </Row>
                     </Container>
                 </section>
                 <section className="news-section py-5">
                     <Container>
-                        <div className="section-title text-center mb-5">Latest News</div>
-                        <Carousel responsive={responsive}>
-                            <Card className="news-card py-3">
-                                <Card.Body>
-                                    <Card.Title className="fw-bold">02</Card.Title>
-                                    <Card.Subtitle>Nov, 2023</Card.Subtitle><hr />
-                                    <Card.Title>Update on Alchemy Pay’s Support in Turkey Earthquake Relief</Card.Title>
-                                    <Card.Text className="mb-3"> In response to the earthquake that struck Turkey in February, Alchemy Pay took immediate action ...</Card.Text>
-                                    <Card.Img src={News6Image} />
-                                </Card.Body>
-                            </Card>
-                            <Card className="news-card py-3">
-                                <Card.Body>
-                                    <Card.Title className="fw-bold">01</Card.Title>
-                                    <Card.Subtitle>Nov, 2023</Card.Subtitle><hr />
-                                    <Card.Title>1,500,000 $ACH Rewards! Get and Recharge Your First Crypto Card on Binance Marketplace</Card.Title>
-                                    <Card.Text className="mb-3"> Starting from November 1st, Cardrypto has initiated a voucher campaign in collaboration with Binance Pay ...</Card.Text>
-                                    <Card.Img src={News1Image} />
-                                </Card.Body>
-                            </Card>
-                            <Card className="news-card py-3">
-                                <Card.Body>
-                                    <Card.Title className="fw-bold">31</Card.Title>
-                                    <Card.Subtitle>Oct, 2023</Card.Subtitle><hr />
-                                    <Card.Title>Alchemy Pay丨 October Update 2023</Card.Title>
-                                    <Card.Text className="mb-3"> Headline News Alchemy Pay Facilitates Crypto Purchases Through ACH and Wire Transfers for USD Transactions </Card.Text>
-                                    <Card.Img src={News5Image} />
-                                </Card.Body>
-                            </Card>
-                            <Card className="news-card py-3">
-                                <Card.Body>
-                                    <Card.Title className="fw-bold">25</Card.Title>
-                                    <Card.Subtitle>Oct, 2023</Card.Subtitle><hr />
-                                    <Card.Title>Alchemy Pay’s Actions in Turkey...</Card.Title>
-                                    <Card.Text className="mb-3"> After adding support for domestic transfers for crypto purchases for Turkish users, AlchemyPay showcases its </Card.Text>
-                                    <Card.Img src={News4Image} />
-                                </Card.Body>
-                            </Card>
-                            <Card className="news-card py-3">
-                                <Card.Body>
-                                    <Card.Title className="fw-bold">24</Card.Title>
-                                    <Card.Subtitle>Oct, 2023</Card.Subtitle><hr />
-                                    <Card.Title>Let’s Meetup – Have a Blast at the Alchemy Pay Influencer Yacht Party in Istanbul</Card.Title>
-                                    <Card.Text className="mb-3"> Join us for the Alchemy Pay Influencer Yacht Party on November 11th, 2023, in the ...</Card.Text>
-                                    <Card.Img src={News5Image} />
-                                </Card.Body>
-                            </Card>
-                            <Card className="news-card py-3">
-                                <Card.Body>
-                                    <Card.Title className="fw-bold">23</Card.Title>
-                                    <Card.Subtitle>Oct, 2023</Card.Subtitle><hr />
-                                    <Card.Title>Mirror World Collaborates with Alchemy Pay for Seamless Test Ramp Integration</Card.Title>
-                                    <Card.Text className="mb-3"> Mirror World, the conversion engine focused on expanding digital asset ownership and publishing web3 games, ...</Card.Text>
-                                    <Card.Img src={News6Image} />
-                                </Card.Body>
-                            </Card>
-                        </Carousel>;
+                        <SectionTitle title="Latest News" />
+                        <NewsCardCarousel data={NewsData} />
                     </Container>
                 </section>
                 <section className="faq-section py-5" id="faq">
                     <Container className="">
-                        <div className="section-title text-center mb-5">FAQs</div>
+                        <SectionTitle title="FAQs" />
                         <Card className="faq-card p-4">
                             <Card.Body>
-                                <Accordion defaultActiveKey="0">
-                                    <Accordion.Item eventKey="0">
-                                        <Accordion.Header>How many cryptocurrencies do you support?</Accordion.Header>
-                                        <Accordion.Body>
-                                            Onramp supports 300+ cryptocurrencies. You can check out the complete list of supported tokens here.
-                                        </Accordion.Body>
-                                    </Accordion.Item>
-                                    <Accordion.Item eventKey="1">
-                                        <Accordion.Header>Which fiat currencies does Onramp provide support for?</Accordion.Header>
-                                        <Accordion.Body>
-                                            Currently Onramp supports Indian Rupee(INR), Turkish Lira(TRY), Emirati Dirham (AED), Mexican Peso (MXN),Vietnamese Dong (VND) with more currencies coming soon.
-                                        </Accordion.Body>
-                                    </Accordion.Item>
-                                    <Accordion.Item eventKey="2">
-                                        <Accordion.Header>Can I subsidize fees charged to users?</Accordion.Header>
-                                        <Accordion.Body>
-                                            Yes. We support dapp level fees shown to users. Dapps can absorb part or full fees on behalf of the users.
-                                        </Accordion.Body>
-                                    </Accordion.Item>
-                                    <Accordion.Item eventKey="3">
-                                        <Accordion.Header>Where does onramp.money source liquidity from?</Accordion.Header>
-                                        <Accordion.Body>
-                                            We work with multiple liquidity providers across the globe to fetch the best rates of cryptocurrencies on Onramp.
-                                        </Accordion.Body>
-                                    </Accordion.Item>
-                                    <Accordion.Item eventKey="4">
-                                        <Accordion.Header>What all integration options do you supports?</Accordion.Header>
-                                        <Accordion.Body>
-                                            We support:
-                                            -- URL based integration (user is redirected to onramp.money page)
-                                            -- Widget/iframe integration (oramp.money page opens inside dapp web page)
-                                            -- White labelled integration (coming soon)
-                                        </Accordion.Body>
-                                    </Accordion.Item>
-                                </Accordion>
+                                <FAQAccordion data={FAQAccordionData} />
                             </Card.Body>
                         </Card>
                     </Container>
@@ -430,21 +184,7 @@ export default function HomePage() {
                         </Card>
                     </Container>
                 </section>
-                <section className="Footer">
-                    <Container className="py-5">
-                        <Row>
-                            <Col sm={12} md={6} className="mx-auto text-center">
-                                <Image src={LogoIcon} alt="logo" className="mb-3" />
-                                <div className="d-flex aling-items-center justify-content-center mb-3">
-                                    <Link to='/' className="nav-link mx-2"><Image src={FacebookIcon} alt="facebook" /></Link>
-                                    <Link to='/' className="nav-link mx-2"><Image src={TwitterIcon} alt="facebook" /></Link>
-                                    <Link to='/' className="nav-link mx-2"><Image src={LinkedinIcon} alt="facebook" /></Link>
-                                </div>
-                                <div className="copyright">Copyright ©2023 NONSTOPAY. | All Rights Reserved</div>
-                            </Col>
-                        </Row>
-                    </Container>
-                </section>
+                <Footer />
             </section>
         </>
     )

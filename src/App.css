@@ -11,17 +11,17 @@
 }
 
 .main-btn {
-  background: #27CCB8 !important;
+  background: #00FF66 !important;
   color: #031013 !important;
   font-size: 16px;
   font-weight: 500 !important;
-  box-shadow: 0 0 0 0 #27CCB8;
+  box-shadow: 0 0 0 0 #00FF66;
 }
 
 .slogan-section .slogan-title {
   font-size: 4rem;
   font-weight: bold;
-  color: #27CCB8 !important;
+  color: #00FF66 !important;
 }
 
 .slogan-section .slogan-text {
@@ -30,17 +30,27 @@
   font-size: 1rem;
 }
 
+.sub-slogan-title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
 .section-title {
   font-size: 36px;
   font-weight: bold;
-  color: #27CCB8 !important;
+  color: #00FF66 !important;
 }
 
-.main-card {
-  background: #031013 !important;
-  /* background-image: linear-gradient(45deg, #27ccb99a, #0d31411a, #27ccb99a); */
-  /* border: 1px solid #0D3141 !important; */
-  color: white !important;
+/* Main Card Style */
+
+.main-card .card-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.main-card .card-text {
+  font-size: 16px;
+  text-align: justify;
 }
 
 @property --rotate {
@@ -54,15 +64,60 @@
   --card-width: calc(var(--card-height) / 1.5);
 }
 
-.main-card .card-title {
-  font-size: 24px;
-  font-weight: bold;
+.main-card.card {
+  background: #0513177c !important;
+  padding: 3px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: white !important;
 }
 
-.main-card .card-text {
-  font-size: 16px;
-  text-align: justify;
+
+.main-card.card::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(var(--rotate), #5ddcff, #3ce37c 43%, #00FF66);
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
 }
+
+.main-card.card::after {
+  position: absolute;
+  content: "";
+  /* top: calc(var(--card-height) / 6); */
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(100px);
+  background-image: linear-gradient(var(--rotate), #3ce37c, #00FF66 43%, #5ddcff);
+  opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+
 
 .faq-card {
   background: #0513177c !important;
@@ -73,7 +128,7 @@
 .code-editor-windows {
   border: 1px solid #0D3141;
   border-radius: 5px;
-  box-shadow: 0 0 30px 0 #27ccb85c;
+  box-shadow: 0 0 30px 0 #00FF665c;
 }
 
 .code-editor-windows .code-editor-window-title {
@@ -175,198 +230,133 @@
 
 .Footer .copyright {
   font-size: 16px;
-  color: #27CCB8;
+  color: #00FF66;
 }
 
 .Header .nav-link.active,
-.Header .nav-link:hover
-{
+.Header .nav-link:hover {
   color: white !important;
 }
 
 
-.main-card.card {
-  background: #0513177c !important;
-  padding: 3px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  font-size: 1.5em;
-  color: rgb(88 199 250 / 0%);
-  cursor: pointer;
-}
 
-/* .main-card.card:hover {
-  color: rgb(88 199 250 / 100%);
-  transition: color 1s;
-  background: #0513177c !important;
-} */
-/* .card:hover:before, .card:hover:after {
-  animation: none;
-  opacity: 0;
-} */
-
-
-.main-card.card::before {
-  content: "";
-  width: 104%;
-  height: 102%;
-  border-radius: 8px;
-  background-image: linear-gradient(
-    var(--rotate)
-    , #5ddcff, #3ce37c 43%, #27CCB8);
-    position: absolute;
-    z-index: -1;
-    top: -1%;
-    left: -2%;
-    animation: spin 2.5s linear infinite;
-}
-
-.main-card.card::after {
-  position: absolute;
-  content: "";
-  top: calc(var(--card-height) / 6);
-  left: 0;
-  right: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 6));
-  background-image: linear-gradient(
-    var(--rotate)
-    , #3ce37c, #27CCB8 43%, #5ddcff);
-    opacity: 1;
-  transition: opacity .5s;
-  animation: spin 2.5s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    --rotate: 0deg;
-  }
-  100% {
-    --rotate: 360deg;
-  }
-}
 
 
 
 .bg-container {
-	width: 100%;
-	position: relative;
-	display: flex;
-	justify-content: center;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 
 
 .frame {
-	width: 700px;
-	height: 700px;
-	position: absolute;
-	border-radius: 50px;
-	border: 5px solid #27CCB8;
-	box-shadow: 0 0 10px #27CCB8,
-		0 0 30px #27CCB8;
-	animation: zooming 4s linear infinite alternate;
+  width: 700px;
+  height: 700px;
+  position: absolute;
+  border-radius: 50px;
+  border: 5px solid #00FF66;
+  box-shadow: 0 0 10px #00FF66,
+    0 0 30px #00FF66;
+  animation: zooming 4s linear infinite alternate;
 }
 
 .frame:nth-child(1) {
-	transform: rotate(40deg) translateY(0px) translateZ(0px);
-	opacity: 1;
-	animation-delay: -1s;
+  transform: rotate(40deg) translateY(0px) translateZ(0px);
+  opacity: 1;
+  animation-delay: -1s;
 }
 
 .frame:nth-child(2) {
-	transform: rotate(40deg) translateY(50px) translateZ(-10px);
-	opacity: 0.9;
-	animation-delay: -1.3s;
+  transform: rotate(40deg) translateY(50px) translateZ(-10px);
+  opacity: 0.9;
+  animation-delay: -1.3s;
 }
 
 .frame:nth-child(3) {
-	transform: rotate(40deg) translateY(100px) translateZ(-20px);
-	opacity: 0.85;
-	animation-delay: -1.5s;
+  transform: rotate(40deg) translateY(100px) translateZ(-20px);
+  opacity: 0.85;
+  animation-delay: -1.5s;
 }
 
 .frame:nth-child(4) {
-	transform: rotate(40deg) translateY(150px) translateZ(-30px);
-	opacity: 0.8;
-	animation-delay: -1.7s;
+  transform: rotate(40deg) translateY(150px) translateZ(-30px);
+  opacity: 0.8;
+  animation-delay: -1.7s;
 }
 
 .frame:nth-child(5) {
-	transform: rotate(40deg) translateY(200px) translateZ(-40px);
-	opacity: 0.75;
-	animation-delay: -1.9s;
+  transform: rotate(40deg) translateY(200px) translateZ(-40px);
+  opacity: 0.75;
+  animation-delay: -1.9s;
 }
 
 .frame:nth-child(6) {
-	transform: rotate(40deg) translateY(250px) translateZ(-50px);
-	opacity: 0.7;
-	animation-delay: -2.1s;
+  transform: rotate(40deg) translateY(250px) translateZ(-50px);
+  opacity: 0.7;
+  animation-delay: -2.1s;
 }
 
 .frame:nth-child(7) {
-	transform: rotate(40deg) translateY(300px) translateZ(-60px);
-	opacity: 0.65;
-	animation-delay: -2.3s;
+  transform: rotate(40deg) translateY(300px) translateZ(-60px);
+  opacity: 0.65;
+  animation-delay: -2.3s;
 }
 
 .frame:nth-child(8) {
-	transform: rotate(40deg) translateY(350px) translateZ(-70px);
-	opacity: 0.6;
-	animation-delay: -2.5s;
+  transform: rotate(40deg) translateY(350px) translateZ(-70px);
+  opacity: 0.6;
+  animation-delay: -2.5s;
 }
 
 .frame:nth-child(9) {
-	transform: rotate(40deg) translateY(400px) translateZ(-80px);
-	opacity: 0.5;
-	animation-delay: -2.7s;
+  transform: rotate(40deg) translateY(400px) translateZ(-80px);
+  opacity: 0.5;
+  animation-delay: -2.7s;
 }
 
 .frame:nth-child(10) {
-	transform: rotate(40deg) translateY(450px) translateZ(-90px);
-	opacity: 0.4;
-	animation-delay: -2.9s;
+  transform: rotate(40deg) translateY(450px) translateZ(-90px);
+  opacity: 0.4;
+  animation-delay: -2.9s;
 }
 
 .frame:nth-child(11) {
-	transform: rotate(40deg) translateY(500px) translateZ(-100px);
-	opacity: 0.3;
-	animation-delay: -3.1s;
+  transform: rotate(40deg) translateY(500px) translateZ(-100px);
+  opacity: 0.3;
+  animation-delay: -3.1s;
 }
 
 .frame:nth-child(12) {
-	transform: rotate(40deg) translateY(550px) translateZ(-110px);
-	opacity: 0.2;
-	animation-delay: -3.3s;
+  transform: rotate(40deg) translateY(550px) translateZ(-110px);
+  opacity: 0.2;
+  animation-delay: -3.3s;
 }
 
 .frame:nth-child(13) {
-	transform: rotate(40deg) translateY(600px) translateZ(-120px);
-	opacity: 0.1;
-	animation-delay: -3.5s;
+  transform: rotate(40deg) translateY(600px) translateZ(-120px);
+  opacity: 0.1;
+  animation-delay: -3.5s;
 }
 
 .frame:nth-child(14) {
-	transform: rotate(40deg) translateY(650px) translateZ(-130px);
-	opacity: 0.05;
-	animation-delay: -3.7s;
+  transform: rotate(40deg) translateY(650px) translateZ(-130px);
+  opacity: 0.05;
+  animation-delay: -3.7s;
 }
 
 @keyframes zooming {
-	0% {
-		transform: scale(0.2) rotate(40deg);
-		opacity: 1;
-	}
-	
-	100% {
-		transform: scale(1) rotate(180deg);
-		opacity: 0;
-	}
+  0% {
+    transform: scale(0.2) rotate(40deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1) rotate(180deg);
+    opacity: 0;
+  }
 }
 
 
@@ -378,14 +368,271 @@
 
 .news-card .card-title {
   font-size: 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 22px;
+  color: #00FF66 !important;
 }
 
-.news-card .card-subtitle {
+.news-card .card-text {
   font-size: 16px !important;
-  font-weight: 500;
+  font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 .news-card:hover {
   background: #27ccb94b !important;
 }
 
+.news-card .card-img {
+  object-fit: cover;
+}
+
+/* Banner Animation Style start */
+.BannerAnimation .banner-animation-1 {
+  position: absolute;
+  bottom: 25%;
+  left: 0%;
+}
+
+.BannerAnimation .banner-animation-2 {
+  position: absolute;
+  bottom: 65%;
+  left: 5%;
+}
+
+.BannerAnimation .banner-animation-3 {
+  position: absolute;
+  bottom: 90%;
+  left: 25%;
+}
+
+.BannerAnimation .banner-animation-4 {
+  position: absolute;
+  bottom: 90%;
+  right: 25%;
+}
+
+.BannerAnimation .banner-animation-5 {
+  position: absolute;
+  bottom: 65%;
+  right: 5%;
+}
+
+.BannerAnimation .banner-animation-6 {
+  position: absolute;
+  bottom: 25%;
+  right: 0%;
+}
+
+.BannerAnimation .banner-animation-1 {
+  animation-name: floating1;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.BannerAnimation .banner-animation-2 {
+  animation-name: floating2;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.BannerAnimation .banner-animation-3 {
+  animation-name: floating3;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.BannerAnimation .banner-animation-4 {
+  animation-name: floating4;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.BannerAnimation .banner-animation-5 {
+  animation-name: floating5;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.BannerAnimation .banner-animation-6 {
+  animation-name: floating6;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating1 {
+  from {
+    transform: translate(0, 0px);
+  }
+
+  65% {
+    transform: translate(0, 15px);
+  }
+
+  to {
+    transform: translate(0, -0px);
+  }
+}
+
+@keyframes floating2 {
+  from {
+    transform: translate(0, 15px);
+  }
+
+  65% {
+    transform: translate(0, 0px);
+  }
+
+  to {
+    transform: translate(0, 15px);
+  }
+}
+
+@keyframes floating3 {
+  from {
+    transform: translate(0, 0px);
+  }
+
+  65% {
+    transform: translate(0, 15px);
+  }
+
+  to {
+    transform: translate(0, -0px);
+  }
+}
+
+@keyframes floating4 {
+  from {
+    transform: translate(0, 15px);
+  }
+
+  65% {
+    transform: translate(0, 0px);
+  }
+
+  to {
+    transform: translate(0, 15px);
+  }
+}
+
+@keyframes floating5 {
+  from {
+    transform: translate(0, 0px);
+  }
+
+  65% {
+    transform: translate(0, 15px);
+  }
+
+  to {
+    transform: translate(0, -0px);
+  }
+}
+
+@keyframes floating6 {
+  from {
+    transform: translate(0, 15px);
+  }
+
+  65% {
+    transform: translate(0, 0px);
+  }
+
+  to {
+    transform: translate(0, 15px);
+  }
+}
+
+/* Banner Animation Style end */
+
+.main-card .main-card-image {
+  width: 160px;
+}
+
+/* Workflow section style */
+.workflow-section {
+  background-image: url('../src/src/assets/images/banner/workflow.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.workflow-section .workflow-banner {
+  /* width: 100vw; */
+  /* height: 100vh; */
+}
+
+/* .workflow-section .value-section {
+  height: 100vh;
+} */
+
+/* .workflow-section .container-sliders-wrapper {
+  height: 70%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* .workflow-section .workflow-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  height: 100%;
+} */
+
+.workflow-section .workflow-banner img {
+  width: 100%;
+} */
+
+.workflow-section .workflow-banner .workflow-banner-left,
+.step-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00FF66;
+}
+
+.workflow-section .workflow-banner .workflow-banner-left,
+.step-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.workflow-section .workflow-banner .workflow-banner-left,
+.step-subtitle {
+  font-size: 16px;
+  font-weight: 300;
+  color: white;
+}
+
+.workflow-section .workflow-banner .workflow-banner-right .step-title {
+  font-size: 128px;
+  font-weight: bold;
+  color: #00ff6634;
+  text-align: end;
+}
