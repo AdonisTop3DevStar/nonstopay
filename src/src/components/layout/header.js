@@ -17,6 +17,7 @@ export default function Header() {
                         <Nav.Link href="#codebase" className="mx-3">API Integration</Nav.Link>
                         <Nav.Link href="#usecase" className="mx-3">UseCase</Nav.Link>
                         <Nav.Link href="#faq" className="mx-3">FAQ</Nav.Link>
+                        <Nav.Link href="#contact" className="mx-3">Contact Us</Nav.Link>
                     </Nav>
                     <Nav className="ms-auto my-4 my-md-0">
                         <Button className="rounded-5 main-btn border-0">Integrate Now</Button>
