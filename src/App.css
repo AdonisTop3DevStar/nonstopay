@@ -668,3 +668,9 @@
     transform: translate(0, -0px);
   }
 }
+
+
+.carousel-control-next, .carousel-control-prev, 
+.carousel-control-next, .carousel-control-next  {
+  align-items: end !important;
+}

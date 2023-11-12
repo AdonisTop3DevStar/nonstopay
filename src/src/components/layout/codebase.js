@@ -25,6 +25,7 @@ export const CodeEditor = () => {
                 theme="vs-dark"
                 defaultLanguage="javascript"
                 defaultValue={code}
+                options={{readOnly: true}}
             />
         </div>
     )

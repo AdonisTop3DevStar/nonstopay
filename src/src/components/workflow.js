@@ -11,7 +11,7 @@ export const Workflow = () => {
 
     return (
         <div className="value-section">
-            <Carousel activeIndex={index} onSelect={handleSelect} fade>
+            <Carousel slide={false}>
                 <Carousel.Item>
                 <Row className="workflow-banner align-items-center">
                     <Col md={3} className="workflow-banner-left d-none d-md-block">
