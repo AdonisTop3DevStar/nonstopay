@@ -45,8 +45,7 @@ export default function HomePage() {
                                     </div>
                                     <div>your Business with us!</div></div>
                                 <div className="slogan-text mb-4">Discover the ultimate payment processing and our lightning-live settlements</div>
-                                
-                                <Nav.Link href="https://usdc.nonstopay.net/signup" target="_black" className="main-btn rounded-5 border-0 shadow mb-5 px-5 w-50 text-center py-2">Integrate Now</Nav.Link>
+                                <Nav.Link target="_black" href='https://usdc.nonstopay.net/signup' ><Button className="main-btn border-0 rounded-5 px-5 py-2 mb-5">Integrate Now</Button></Nav.Link>
                             </Col>
                             <Col sm={12} md={6} className="text-center">
                                 <BannerAnimation />

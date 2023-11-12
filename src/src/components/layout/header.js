@@ -24,7 +24,7 @@ export default function Header() {
                         <Nav.Link onClick={handleShow} className="mx-3">Contact Us</Nav.Link>
                     </Nav>
                     <Nav className="ms-auto my-4 my-md-0">
-                        <Nav.Link target="_black" href='https://usdc.nonstopay.net/signup' className="rounded-5 main-btn border-0 px-3">Integrate Now</Nav.Link>
+                        <Nav.Link target="_black" href='https://usdc.nonstopay.net/signup' className='text-center' ><Button className="main-btn border-0 rounded-5 px-5 py-2">Integrate Now</Button></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
