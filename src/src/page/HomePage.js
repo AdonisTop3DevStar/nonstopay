@@ -90,7 +90,7 @@ export default function HomePage() {
                                     <div className="step-title">Submit Information</div>
                                     <div className="step-subtitle">Submit Information</div>
                                 </Col>
-                                <Col md={6} sm={12} className="text-center"><Image src={Step1Img} width="100%" /></Col>
+                                <Col md={6} sm={12} className="text-center"><Image src={Step1Img} width="70%" /></Col>
                                 <Col md={3} className="workflow-banner-right d-none  d-md-block">
                                     <div className="step-title">01</div>
                                 </Col>
@@ -101,7 +101,7 @@ export default function HomePage() {
                                     <div className="step-title">Waiting to Process</div>
                                     <div className="step-subtitle">Waiting to Process</div>
                                 </Col>
-                                <Col md={6} sm={12} className="text-center"><Image src={Step2Img} className="w-100" /></Col>
+                                <Col md={6} sm={12} className="text-center"><Image src={Step2Img} width="70%" /></Col>
                                 <Col md={3} className="workflow-banner-right d-none  d-md-block">
                                     <div className="step-title">02</div>
                                 </Col>
@@ -112,7 +112,7 @@ export default function HomePage() {
                                     <div className="step-title">Transaction Approved</div>
                                     <div className="step-subtitle">Transaction Approved</div>
                                 </Col>
-                                <Col md={6} sm={12} className="text-center"><Image src={Step3Img} className="w-100" /></Col>
+                                <Col md={6} sm={12} className="text-center"><Image src={Step3Img} width="70%" /></Col>
                                 <Col md={3} className="workflow-banner-right d-none  d-md-block">
                                     <div className="step-title">03</div>
                                 </Col>
@@ -124,7 +124,7 @@ export default function HomePage() {
                     </div>
                 </Container>
             </section>
-            <section className="earth-section" id="map">
+            <section className="earth-section py-5" id="map">
                 <Container className="">
                     <SectionTitle title="NO MIDDLEMEN, NO INTERMEDIARIES" />
                     <div className="text-center text-white mb-5">Taking your business to scale requires it to accept payments from all over the globe. NONSTOPAY drives your expansion – fast, safe, and perfectly convenient.</div>
