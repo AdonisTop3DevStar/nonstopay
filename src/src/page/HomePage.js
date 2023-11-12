@@ -1,4 +1,4 @@
-import { Container, Row, Col, Button, Image, Card, Accordion } from "react-bootstrap";
+import { Container, Row, Col, Button, Image, Card } from "react-bootstrap";
 import TrustIcon1 from '../assets/images/pay/nocode3.png';
 import TrustIcon2 from '../assets/images/pay/exclusiv.png';
 import TrustIcon3 from '../assets/images/pay/praxis.png';

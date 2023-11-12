@@ -2,7 +2,7 @@ import { Step1Img, Step2Img, Step3Img } from "../assets";
 import { Row, Col, Image } from "react-bootstrap";
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { useEffect, useLayoutEffect, useRef } from "react";
+import {useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -1,7 +1,6 @@
 import { Image } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import slk from '../assets/images/pay/methods/Alipay.svg';
 import { NewsCard } from "./cards";
 
 const newsCardResponsive = {
