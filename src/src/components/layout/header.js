@@ -11,7 +11,7 @@ export default function Header() {
         <Container className="pt-5" id="home" >
             <Navbar collapseOnSelect expand="lg" className="Header rounded rounded-5 px-4">
                 <Navbar.Brand href="#home">
-                    <Image src={Logo} alt="Logo" height="30" />
+                    <Image src={Logo} alt="Logo" height="30"/>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
