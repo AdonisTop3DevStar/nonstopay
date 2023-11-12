@@ -1,4 +1,4 @@
-import { Container, Row, Col, Button, Image, Card } from "react-bootstrap";
+import { Container, Row, Col, Button, Image, Card, Nav } from "react-bootstrap";
 import TrustIcon1 from '../assets/images/pay/nocode3.png';
 import TrustIcon2 from '../assets/images/pay/exclusiv.png';
 import TrustIcon3 from '../assets/images/pay/praxis.png';
@@ -45,7 +45,8 @@ export default function HomePage() {
                                     </div>
                                     <div>your Business with us!</div></div>
                                 <div className="slogan-text mb-4">Discover the ultimate payment processing and our lightning-live settlements</div>
-                                <Button className="main-btn rounded-5 border-0 shadow mb-5 px-5">Integrate Now</Button>
+                                
+                                <Nav.Link href="https://usdc.nonstopay.net/signup" target="_black" className="main-btn rounded-5 border-0 shadow mb-5 px-5 w-50 text-center py-2">Integrate Now</Nav.Link>
                             </Col>
                             <Col sm={12} md={6} className="text-center">
                                 <BannerAnimation />
@@ -139,7 +140,7 @@ export default function HomePage() {
                         <Card className="register-card py-5">
                             <Card.Body className="text-center">
                                 <Card.Title className="text-center mb-5">Join the thousands of companies that use our platform</Card.Title>
-                                <Button className="main-btn rounded-5 border-0 shadow">Integrate Now</Button>
+                                <MainButton title="Integrate Now"/>
                             </Card.Body>
                         </Card>
                     </Container>
