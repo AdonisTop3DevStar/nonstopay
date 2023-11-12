@@ -31,7 +31,7 @@ export default function HomePage() {
                     <Container className="py-5">
                         <Row className="align-items-center py-5">
                             <Col sm={12} md={6} className="text-md-start text-center">
-                                <div className="slogan-title mb-5 text-white">
+                                <div className="slogan-title mb-4 text-white">
                                     <div className="subcontent">
                                         <div className="animated-text text-white">
                                             <Typewriter
@@ -43,9 +43,9 @@ export default function HomePage() {
                                             />
                                         </div>
                                     </div>
-                                    <div>Your Business Payment Processing</div></div>
-                                <div className="slogan-text mb-5">Speed up your payment and  open a new page for your business today!</div>
-                                <Button className="main-btn rounded-5 border-0 shadow mb-5">Integrate Now</Button>
+                                    <div>your business with our processing payment solutions</div></div>
+                                <div className="slogan-text mb-4">Speed up your payment and  open a new page for your business today!</div>
+                                <Button className="main-btn rounded-5 border-0 shadow mb-5 px-5">Integrate Now</Button>
                             </Col>
                             <Col sm={12} md={6} className="text-center">
                                 <BannerAnimation />
@@ -92,7 +92,7 @@ export default function HomePage() {
                     <iframe src="/earth.htm" width="100%" height="650px" title="Earth"></iframe>
                 </Container>
             </section>
-            <section className="codebase-section py-5 overflow-hidden" id="codebase">
+            <section className="codebase-section py-5" id="codebase">
                 <FramerBackground />
                 <Container className="">
                     <SectionTitle title="A few lines of code, that's all" />

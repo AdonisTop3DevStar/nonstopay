@@ -13,13 +13,14 @@
 .main-btn {
   background: #00FF66 !important;
   color: #031013 !important;
-  font-size: 16px;
+  font-size: 20px !important;
   font-weight: 500 !important;
   box-shadow: 0 0 0 0 #00FF66;
 }
 
 .slogan-section .slogan-title {
-  font-size: 4rem;
+  font-size: 3.5rem;
+  line-height: 3.5rem;
   font-weight: bold;
   color: #00FF66 !important;
 }
@@ -607,4 +608,64 @@
   font-weight: bold;
   color: #00ff6634;
   text-align: end;
+}
+
+/* Codebase section style */
+.codebase-section {
+  overflow-x: clip;
+}
+
+/* Main Card Section */
+
+.main-card-section .main-card .card-img{
+  position: relative;
+  bottom: 25%;
+  right: 0%;
+}
+
+.main-card-section .main-card .card-img{
+  animation-name: floating1;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes main-floating1 {
+  from {
+    transform: translate(0, 0px);
+  }
+
+  65% {
+    transform: translate(0, 15px);
+  }
+
+  to {
+    transform: translate(0, -0px);
+  }
+}
+@keyframes main-floating2 {
+  from {
+    transform: translate(0, 0px);
+  }
+
+  65% {
+    transform: translate(0, 15px);
+  }
+
+  to {
+    transform: translate(0, -0px);
+  }
+}
+@keyframes main-floating3 {
+  from {
+    transform: translate(0, 0px);
+  }
+
+  65% {
+    transform: translate(0, 15px);
+  }
+
+  to {
+    transform: translate(0, -0px);
+  }
 }

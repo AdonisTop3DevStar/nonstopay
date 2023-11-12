@@ -39,7 +39,7 @@ const paymentCardResponse = {
     },
     mobile: {
         breakpoint: { max: 464, min: 0 },
-        items: 4
+        items: 3
     }
 };
 
@@ -49,7 +49,7 @@ export const PaymentCardCarousel = ({data}) => {
             {
                 data?.map((item, index) => (
                     <div className="text-center" key={index}>
-                        <Image src={item.image} alt={item.title}/>
+                        <Image src={item.image} alt={item.title} width="100"/>
                     </div>
                 ))
             }
@@ -63,7 +63,7 @@ export const NewsCardCarousel = ({data}) => {
             {
                 data?.map((item, index) => (
                     <div key={index}>
-                        <NewsCard title={item.title} description={item.description} image={item.image} date={item.date}/>
+                        <NewsCard title={item.title} description={item.description} image={item.image} date={item.date} day={item.day}/>
                     </div>
                 ))
             }

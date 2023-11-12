@@ -12,12 +12,12 @@ export const MainCard = ({ title, image, description }) => {
     )
 }
 
-export const NewsCard = ({ title, image, description, date }) => {
+export const NewsCard = ({ title, image, description, date, day }) => {
     return (
         <Card className="news-card px-3">
             <Card.Body>
-                <Card.Title className="fw-bold">02</Card.Title>
-                <Card.Subtitle>Nov, 2023</Card.Subtitle><hr />
+                <Card.Title className="fw-bold">{day}</Card.Title>
+                <Card.Subtitle>{date}</Card.Subtitle><hr />
                 <Card.Title>{title}</Card.Title>
                 <Card.Text className="mb-3">{description}</Card.Text>
                 <Card.Img src={image} width="300" height="150"/>
