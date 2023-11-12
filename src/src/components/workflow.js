@@ -1,13 +1,7 @@
-import { useState } from "react";
 import { Step1Img, Step2Img, Step3Img } from "../assets";
 import { Row, Col, Image, Carousel } from "react-bootstrap";
 
 export const Workflow = () => {
-    const [index, setIndex] = useState(0);
-
-    const handleSelect = (selectedIndex) => {
-        setIndex(selectedIndex);
-    };
 
     return (
         <div className="value-section">
