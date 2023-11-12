@@ -114,15 +114,15 @@ export const ParticlesBackground = () => {
 }
 
 export const BannerAnimation = () => {
-    return(
+    return (
         <div className="BannerAnimation position-relative">
-            <Image src={BannerAnimation1} alt="banner-animation-1" className="banner-animation-1"/>
-            <Image src={BannerAnimation2} alt="banner-animation-2" className="banner-animation-2"/>
-            <Image src={BannerAnimation3} alt="banner-animation-3" className="banner-animation-3"/>
-            <Image src={BannerAnimation4} alt="banner-animation-4" className="banner-animation-4"/>
-            <Image src={BannerAnimation5} alt="banner-animation-5" className="banner-animation-5"/>
-            <Image src={BannerAnimation6} alt="banner-animation-6" className="banner-animation-6"/>
-            <Image src={BannerAnimationHero} alt="banner-animation-hero" className="banner-animation-hero"/>
+            <Image src={BannerAnimation1} alt="banner-animation-1" className="banner-animation-1" />
+            <Image src={BannerAnimation2} alt="banner-animation-2" className="banner-animation-2" />
+            <Image src={BannerAnimation3} alt="banner-animation-3" className="banner-animation-3" />
+            <Image src={BannerAnimation4} alt="banner-animation-4" className="banner-animation-4" />
+            <Image src={BannerAnimation5} alt="banner-animation-5" className="banner-animation-5" />
+            <Image src={BannerAnimation6} alt="banner-animation-6" className="banner-animation-6" />
+            <Image src={BannerAnimationHero} alt="banner-animation-hero" className="banner-animation-hero" />
         </div>
     )
 }

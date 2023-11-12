@@ -7,8 +7,6 @@ import TrustIcon5 from '../assets/images/pay/soft2bet.png';
 import TrustIcon6 from '../assets/images/pay/netoplpay.png';
 import TrustIcon7 from '../assets/images/pay/bitandpay.png';
 import TrustIcon8 from '../assets/images/pay/nftuloan.png';
-import 'animate.css/animate.css';
-import 'css-doodle';
 import { MainCard} from "../components/cards";
 import Typewriter from 'typewriter-effect';
 import "react-multi-carousel/lib/styles.css";
@@ -19,8 +17,6 @@ import { FAQAccordionData, MainCardData, NewsData, PaymentMethodData } from "../
 import { MainButton, SectionTitle } from "../components";
 import { FAQAccordion } from "../components/accordion";
 import Footer from "../components/layout/footer";
-// import { Workflow } from "../components/workflow";
-import { Step1Img} from "../assets";
 import { Workflow } from "../components/workflow";
 
 
@@ -29,7 +25,7 @@ export default function HomePage() {
 
     return (
         <>
-            <section className="top-bg">
+            <section className="top-bg" id="home">
                 <ParticlesBackground />
                 <section className="slogan-section py-5 position-relative">
                     <Container className="py-5">

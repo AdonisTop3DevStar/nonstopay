@@ -13,6 +13,7 @@ export default function Header() {
                     <Nav className="mx-auto d-none d-md-flex">
                         <Nav.Link href="#home">Home</Nav.Link>
                         <Nav.Link href="#trust">Trust by</Nav.Link>
+                        <Nav.Link href="#workflow">Workflow</Nav.Link>
                         <Nav.Link href="#codebase">API Integration</Nav.Link>
                         <Nav.Link href="#usecase">UseCase</Nav.Link>
                         <Nav.Link href="#faq">FAQ</Nav.Link>

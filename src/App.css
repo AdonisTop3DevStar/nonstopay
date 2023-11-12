@@ -577,6 +577,9 @@
   background-repeat: no-repeat;
 }
 
+.workflow-section .carousel-indicators {
+  display: none;
+}
 
 .workflow-section .workflow-banner .workflow-banner-left,
 .step-number {
@@ -604,13 +607,4 @@
   font-weight: bold;
   color: #00ff6634;
   text-align: end;
-}
-
-.workflow-section .carousel-indicators {
-  display: none
-}
-
-.workflow-section .carousel-control-next, .carousel-control-prev,
-.workflow-section .carousel-control-next, .carousel-control-next {
- align-items: end !important;
 }
