@@ -45,7 +45,7 @@ const paymentCardResponse = {
 
 export const PaymentCardCarousel = ({data}) => {
     return (
-        <Carousel responsive={paymentCardResponse}>
+        <Carousel responsive={paymentCardResponse} autoPlay="ture">
             {
                 data?.map((item, index) => (
                     <div className="text-center" key={index}>

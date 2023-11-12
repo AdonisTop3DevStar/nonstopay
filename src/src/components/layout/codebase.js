@@ -1,8 +1,8 @@
 import Editor from '@monaco-editor/react';
 
-const code = `import { createCheckoutWithCardElement } from '@paperxyz/js-client-sdk';
+const code = `import { createCheckoutWithCardElement } from '@nonstopay/js-client-sdk';
     <CheckoutWithCard
-    sdkClientSecret="GrUw7rkm..."
+    sdkClientSecret="input your client secret key"
     onPaymentSuccess={(result) => console.log(result)}
     onReview={(result) => console.log(result)}
     onError={(error) => console.error(error)}
@@ -10,9 +10,9 @@ const code = `import { createCheckoutWithCardElement } from '@paperxyz/js-client
         colorBackground: '#fefae0',
         colorPrimary: '#606c38',
         colorText: '#283618',
-        borderRadius: 6,
-        inputBackgroundColor: '#faedcd',
-        inputBorderColor: '#d4a373',
+        borderRadius: 10,
+        inputBackgroundColor: '#041417',
+        inputBorderColor: '#00FF66 ',
     }}
     />;`
 

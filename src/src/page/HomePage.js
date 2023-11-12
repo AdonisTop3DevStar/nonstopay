@@ -43,8 +43,8 @@ export default function HomePage() {
                                             />
                                         </div>
                                     </div>
-                                    <div>your business with our processing payment solutions</div></div>
-                                <div className="slogan-text mb-4">Speed up your payment and  open a new page for your business today!</div>
+                                    <div>your Business with us!</div></div>
+                                <div className="slogan-text mb-4">Discover the ultimate payment processing and our lightning-live settlements</div>
                                 <Button className="main-btn rounded-5 border-0 shadow mb-5 px-5">Integrate Now</Button>
                             </Col>
                             <Col sm={12} md={6} className="text-center">
@@ -64,7 +64,7 @@ export default function HomePage() {
             <section className="trust-section py-5" id="trust">
                 <Container className="">
                     <SectionTitle title="Trusted By" />
-                    <Row>
+                    <Row className="align-items-center">
                         <Col sm={12} md={3} className="mb-4 text-center"><Image src={TrustIcon1} width="200" alt="nocode3.xyz" /></Col>
                         <Col sm={12} md={3} className="mb-4 text-center"><Image src={TrustIcon2} width="200" alt="exclusiv.ly" /></Col>
                         <Col sm={12} md={3} className="mb-4 text-center"><Image src={TrustIcon3} width="200" alt="praxis.tech" /></Col>
@@ -88,7 +88,7 @@ export default function HomePage() {
             <section className="earth-section py-5" id="map">
                 <Container className="">
                     <SectionTitle title="NO MIDDLEMEN, NO INTERMEDIARIES" />
-                    <div className="text-center text-white mb-5">Taking your business to scale requires it to accept payments from all over the globe. NONSTOPAY drives your expansion – fast, safe, and perfectly convenient.</div>
+                    <div className="text-center text-white mb-5 fs-4">Taking your business to scale requires it to accept payments from all over the globe. NONSTOPAY drives your expansion – 154 countries, 65 payments method, Global coverage</div>
                     <iframe src="/earth.htm" width="100%" height="650px" title="Earth"></iframe>
                 </Container>
             </section>
@@ -110,7 +110,7 @@ export default function HomePage() {
                         <Row className="align-items-center">
                             {
                                 MainCardData.map((item, index) => (
-                                    <Col sm={12} md={4} className="mb-5 px-3">
+                                    <Col sm={12} md={4} className="mb-5 px-3 use-case-list">
                                         <MainCard title={item.title} description={item.description} image={item.image} />
                                     </Col>
                                 ))

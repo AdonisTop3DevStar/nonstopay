@@ -2,10 +2,10 @@ import { Card } from "react-bootstrap"
 
 export const MainCard = ({ title, image, description }) => {
     return (
-        <Card className="main-card p-4 text-center">
+        <Card className="main-card p-4 text-center position-relative">
             <Card.Body className="">
-                <Card.Img src={image} alt="main-card-image mb-5" className="main-card-image"/>
-                <Card.Title className="mb-3 text-start">{title}</Card.Title>
+                <Card.Img src={image} alt="main-card-image" className="main-card-image"/>
+                <Card.Title className="mb-3 text-start mt-5">{title}</Card.Title>
                 <Card.Text>{description}</Card.Text>
             </Card.Body>
         </Card>

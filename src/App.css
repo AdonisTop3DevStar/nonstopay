@@ -6,7 +6,7 @@
 }
 
 .Header .nav-link {
-  color: rgba(255, 255, 255, 0.514);
+  color: rgb(255, 255, 255);
 }
 
 .main-btn {
@@ -25,13 +25,13 @@
 }
 
 .slogan-section .slogan-text {
-  color: #95A1B4;
+  color: #fafafa;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .sub-slogan-title {
-  font-size: 32px;
+  font-size: 3.5rem;
   font-weight: bold;
 }
 
@@ -39,6 +39,12 @@
   font-size: 36px;
   font-weight: bold;
   color: #00FF66 !important;
+}
+
+.trust-section img:hover {
+  box-shadow: 0 0 35px 0 #00FF66;
+    background: #02803a;
+    backdrop-filter: blur(100px);
 }
 
 /* Main Card Style */
@@ -617,25 +623,37 @@
 /* Main Card Section */
 
 .main-card-section .main-card .card-img{
-  position: relative;
-  bottom: 25%;
-  right: 0%;
+  position: absolute;
+  top: -5rem;
+  right: 25%;
 }
 
-.main-card-section .main-card .card-img{
+.main-card-section .use-case-list:nth-child(1) .main-card .card-img{
   animation-name: floating1;
   animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.main-card-section .use-case-list:nth-child(2) .main-card .card-img{
+  animation-name: floating2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.main-card-section .use-case-list:nth-child(3) .main-card .card-img{
+  animation-name: floating3;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
 
 @keyframes main-floating1 {
   from {
-    transform: translate(0, 0px);
+    transform: translate(0, 100px);
   }
 
   65% {
-    transform: translate(0, 15px);
+    transform: translate(0, 100px);
   }
 
   to {
@@ -644,7 +662,7 @@
 }
 @keyframes main-floating2 {
   from {
-    transform: translate(0, 0px);
+    transform: translate(15, 0px);
   }
 
   65% {
@@ -652,7 +670,7 @@
   }
 
   to {
-    transform: translate(0, -0px);
+    transform: translate(15, -0px);
   }
 }
 @keyframes main-floating3 {
@@ -672,5 +690,5 @@
 
 .carousel-control-next, .carousel-control-prev, 
 .carousel-control-next, .carousel-control-next  {
-  align-items: end !important;
+  display: none !important;
 }
