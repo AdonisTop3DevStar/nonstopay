@@ -21,6 +21,7 @@ import { FAQAccordion } from "../components/accordion";
 import Footer from "../components/layout/footer";
 // import { Workflow } from "../components/workflow";
 import { Step1Img} from "../assets";
+import { Workflow } from "../components/workflow";
 
 
 
@@ -82,43 +83,7 @@ export default function HomePage() {
             <section className="workflow-section py-5" id="workflow">
                 <Container>
                     <SectionTitle title="HOW IT WORKS?" />
-                    <div className="value-section">
-                        <div className="container-sliders-wrapper">
-                            <Row className="workflow-banner align-items-center">
-                                <Col md={3} className="workflow-banner-left d-none d-md-block">
-                                    <div className="step-number">01</div>
-                                    <div className="step-title">Submit Information</div>
-                                    <div className="step-subtitle">Submit Information</div>
-                                </Col>
-                                <Col md={6} sm={12} className="text-center"><Image src={Step1Img} width="70%" /></Col>
-                                <Col md={3} className="workflow-banner-right d-none  d-md-block">
-                                    <div className="step-title">01</div>
-                                </Col>
-                            </Row>
-                            {/* <Row className="workflow-banner align-items-center">
-                                <Col md={3} className="workflow-banner-left d-none d-md-block">
-                                    <div className="step-number">02</div>
-                                    <div className="step-title">Waiting to Process</div>
-                                    <div className="step-subtitle">Waiting to Process</div>
-                                </Col>
-                                <Col md={6} sm={12} className="text-center"><Image src={Step2Img} width="70%" /></Col>
-                                <Col md={3} className="workflow-banner-right d-none  d-md-block">
-                                    <div className="step-title">02</div>
-                                </Col>
-                            </Row>
-                            <Row className="workflow-banner align-items-center">
-                                <Col md={3} className="workflow-banner-left d-none d-md-block">
-                                    <div className="step-number">03</div>
-                                    <div className="step-title">Transaction Approved</div>
-                                    <div className="step-subtitle">Transaction Approved</div>
-                                </Col>
-                                <Col md={6} sm={12} className="text-center"><Image src={Step3Img} width="70%" /></Col>
-                                <Col md={3} className="workflow-banner-right d-none  d-md-block">
-                                    <div className="step-title">03</div>
-                                </Col>
-                            </Row> */}
-                        </div>
-                    </div>
+                    <Workflow/>
                     <div className="text-center">
                         <MainButton title="Integrate API" />
                     </div>

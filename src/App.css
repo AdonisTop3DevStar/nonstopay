@@ -577,36 +577,6 @@
   background-repeat: no-repeat;
 }
 
-.workflow-section .workflow-banner {
-  /* width: 100vw; */
-  /* height: 100vh; */
-}
-
-/* .workflow-section .value-section {
-  height: 100vh;
-} */
-
-/* .workflow-section .container-sliders-wrapper {
-  height: 70%;
-  overflow: hidden;
-  position: relative;
-}
-
-/* .workflow-section .workflow-banner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
-  height: 100%;
-} */
-
-.workflow-section .workflow-banner img {
-  width: 100%;
-} 
 
 .workflow-section .workflow-banner .workflow-banner-left,
 .step-number {
@@ -634,4 +604,13 @@
   font-weight: bold;
   color: #00ff6634;
   text-align: end;
+}
+
+.workflow-section .carousel-indicators {
+  display: none
+}
+
+.workflow-section .carousel-control-next, .carousel-control-prev,
+.workflow-section .carousel-control-next, .carousel-control-next {
+ align-items: end !important;
 }
