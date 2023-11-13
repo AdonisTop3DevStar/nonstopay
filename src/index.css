@@ -75,8 +75,6 @@ body .App {
   .bottom-bg {
     background-image: url('./src/assets/images/bg2.png');
     background-size: cover;
-    backdrop-filter: blur(0px);
-    /* background-color: #031013 !important; */
   }
   
   .Typewriter .Typewriter__cursor {
