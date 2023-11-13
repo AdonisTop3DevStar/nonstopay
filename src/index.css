@@ -69,6 +69,7 @@ body .App {
     background-size: cover;
     backdrop-filter: blur(50px);
     background-position: bottom;
+    background-color: #031013 !important;
   }
   
   .bottom-bg {
