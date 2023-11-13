@@ -8,6 +8,6 @@ export const MainButton = ({title}) => {
 
 export const SectionTitle = ({title}) => {
     return (
-        <div className="section-title text-center mb-5">{title}</div>
+        <div className="section-title text-center mb-5 position-relative">{title}</div>
     )
 }

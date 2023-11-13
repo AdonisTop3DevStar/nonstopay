@@ -61,10 +61,10 @@ export default function HomePage() {
                     </Container>
                 </section>
             </section>
-            <section className="trust-section py-5" id="trust">
+            <section className="trust-section py-5 position-relative" id="trust">
                 <Container className="">
                     <SectionTitle title="Trusted By" />
-                    <Row className="align-items-center">
+                    <Row className="align-items-center position-relative">
                         <Col sm={12} md={3} className="mb-4 text-center"><Image src={TrustIcon1} width="200" alt="nocode3.xyz" /></Col>
                         <Col sm={12} md={3} className="mb-4 text-center"><Image src={TrustIcon2} width="200" alt="exclusiv.ly" /></Col>
                         <Col sm={12} md={3} className="mb-4 text-center"><Image src={TrustIcon3} width="200" alt="praxis.tech" /></Col>
@@ -76,7 +76,7 @@ export default function HomePage() {
                     </Row>
                 </Container>
             </section>
-            <section className="workflow-section py-5" id="workflow">
+            <section className="workflow-section py-5 position-relative" id="workflow">
                 <Container>
                     <SectionTitle title="HOW IT WORKS?" />
                     <Workflow/>
@@ -85,14 +85,14 @@ export default function HomePage() {
                     </div>
                 </Container>
             </section>
-            <section className="earth-section py-5" id="map">
+            <section className="earth-section py-5 position-relative" id="map">
                 <Container className="">
                     <SectionTitle title="NO MIDDLEMEN, NO INTERMEDIARIES" />
                     <div className="text-center text-white mb-5 fs-4">Taking your business to scale requires it to accept payments from all over the globe. NONSTOPAY drives your expansion – 154 countries, 65 payments method, Global coverage</div>
                     <iframe src="/earth.htm" width="100%" height="650px" title="Earth"></iframe>
                 </Container>
             </section>
-            <section className="codebase-section py-5" id="codebase">
+            <section className="codebase-section py-5 position-relative" id="codebase">
                 <FramerBackground />
                 <Container className="">
                     <SectionTitle title="A few lines of code, that's all" />
@@ -103,7 +103,7 @@ export default function HomePage() {
                     </Row>
                 </Container>
             </section>
-            <section className="bottom-bg" id="usecase">
+            <section className="bottom-bg position-relative" id="usecase">
                 <section className="main-card-section py-5">
                     <Container className="">
                         <SectionTitle title="Use case" />

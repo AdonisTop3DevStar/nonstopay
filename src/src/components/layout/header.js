@@ -8,8 +8,8 @@ export default function Header() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
-        <Container className="pt-5" id="home" >
-            <Navbar collapseOnSelect expand="lg" className="Header rounded rounded-5 px-4">
+        <Container className="pt-5">
+            <Navbar expand="lg" className="Header rounded rounded-5 px-4">
                 <Navbar.Brand href="#home">
                     <Image src={Logo} alt="Logo" height="30"/>
                 </Navbar.Brand>
