@@ -103,7 +103,7 @@ export default function HomePage() {
                     </Row>
                 </Container>
             </section>
-            <section className="bottom-bg position-relative" id="usecase">
+            <section className="bottom-bg position-relative mt-5 pt-5" id="usecase">
                 <section className="main-card-section py-5">
                     <Container className="">
                         <SectionTitle title="Use case" />
