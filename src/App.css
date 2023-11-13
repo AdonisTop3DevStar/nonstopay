@@ -18,6 +18,12 @@
   filter: invert(1);
 }
 
+.Header .login-btn {
+  background: none !important;
+  border: 1px solid #00FF66 !important;
+  color: #00FF66 !important;
+}
+
 .main-btn {
   background: #00FF66 !important;
   color: #031013 !important;
