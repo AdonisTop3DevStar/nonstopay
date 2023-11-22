@@ -26,20 +26,22 @@ import axios from "axios";
 export default function HomePage() {
 
     const getNewsData = async () => {
-        const headers = {
-            "Access-Control-Allow-Origin": `*`
-          }
-        await axios.get(`https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg`, {headers})
-            .then(function (response) {
-                console.log("adonis", response);
-            })
-            .catch(function (error) {
-                console.log("------profile church------", error)
+        var myHeaders = new Headers();
+        myHeaders.append("accept", "application/json");
 
-            });
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+
+        fetch("https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
     }
 
-    
+
 
     useEffect(() => {
         getNewsData();
