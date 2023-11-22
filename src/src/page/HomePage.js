@@ -26,19 +26,22 @@ import axios from "axios";
 export default function HomePage() {
 
     const getNewsData = async () => {
-        var myHeaders = new Headers();
-        myHeaders.append("accept", "application/json");
-
-        var requestOptions = {
-            method: 'GET',
-            headers: myHeaders,
-            redirect: 'follow'
-        };
-
-        fetch("https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg", requestOptions)
-            .then(response => response.text())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
+        let config = {
+            method: 'get',
+            maxBodyLength: Infinity,
+            url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg',
+            headers: { 
+              'accept': 'application/json'
+            }
+          };
+          
+          axios.request(config)
+          .then((response) => {
+            console.log(JSON.stringify(response.data));
+          })
+          .catch((error) => {
+            console.log(error);
+          });
     }
 
 
