@@ -18,30 +18,75 @@ import { MainButton, SectionTitle } from "../components";
 import { FAQAccordion } from "../components/accordion";
 import Footer from "../components/layout/footer";
 import { Workflow } from "../components/workflow";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import parser from 'xml2js';
+
 
 
 
 export default function HomePage() {
+    const [NewsData, setNewsData] = useState([]);
 
     const getNewsData = async () => {
         let config = {
             method: 'get',
             maxBodyLength: Infinity,
-            url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg',
-            headers: { 
-              'accept': 'application/json'
+            url: 'http://localhost:5000/https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg',
+            headers: {
+                'accept': 'application/json'
             }
-          };
+        };
+
+       
+
+        function formatDay(inputDateString) {
+            const date = new Date(inputDateString);
           
-          axios.request(config)
-          .then((response) => {
-            console.log(JSON.stringify(response.data));
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+            const dayOptions = { 
+              day: 'numeric'
+            };
+            return date.toLocaleDateString('en-US', dayOptions);
+          }
+        function formatDate(inputDateString) {
+            const date = new Date(inputDateString);
+          
+            const dateOptions = { 
+              month: 'long', 
+              year: 'numeric' 
+            };
+          
+            return date.toLocaleDateString('en-US', dateOptions)
+          }
+
+        axios.request(config)
+            .then((response) => {
+                const xmlData = response.data;
+                parser.parseString(xmlData, (err, result) => {
+                    if (err) {
+                        console.error('Error parsing XML:', err);
+                    } else {
+                        // Now 'result' is the JSON representation of the XML
+                        console.log(result.feed);
+                        let data = [];
+                        for (let i = 0; i < result.feed.entry.length; i++) {
+                              let _data = {
+                                  title : result.feed.entry[i]['media:group'][0]['media:title'][0], 
+                                  description : result.feed.entry[i]['media:group'][0]['media:description'][0], 
+                                  day: formatDay(result.feed.entry[1]['published'][0]), 
+                                  date: formatDate(result.feed.entry[1]['published'][0]) ,
+                                  image: result.feed.entry[i]['media:group'][0]['media:thumbnail'][0].$.url
+                                }
+                            data.push(_data);
+                        }
+                        setNewsData(data);
+                    }
+                });
+                // console.log(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
 
