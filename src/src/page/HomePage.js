@@ -26,7 +26,10 @@ import axios from "axios";
 export default function HomePage() {
 
     const getNewsData = async () => {
-        await axios.get(`https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg`)
+        const headers = {
+            "Access-Control-Allow-Origin": `*`
+          }
+        await axios.get(`https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg`, {headers})
             .then(function (response) {
                 console.log("adonis", response);
             })
