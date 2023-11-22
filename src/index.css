@@ -1,143 +1,198 @@
 body .App {
-    /* background: #031013; */
-    background: linear-gradient(180deg, #031013, #031013, #27CCB8);
-    background-size: 400% 400%;
-  
-    -webkit-animation: AnimationName 15s ease infinite;
-    -moz-animation: AnimationName 15s ease infinite;
-    -o-animation: AnimationName 15s ease infinite;
-    animation: AnimationName 15s ease infinite;
+  /* background: #031013; */
+  background: linear-gradient(180deg, #031013, #031013, #27CCB8);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 15s ease infinite;
+  -moz-animation: AnimationName 15s ease infinite;
+  -o-animation: AnimationName 15s ease infinite;
+  animation: AnimationName 15s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
   }
-  
-  @-webkit-keyframes AnimationName {
-    0% {
-        background-position: 0% 50%
-    }
-  
-    50% {
-        background-position: 100% 50%
-    }
-  
-    100% {
-        background-position: 0% 50%
-    }
+
+  50% {
+    background-position: 100% 50%
   }
-  
-  @-moz-keyframes AnimationName {
-    0% {
-        background-position: 0% 50%
-    }
-  
-    50% {
-        background-position: 100% 50%
-    }
-  
-    100% {
-        background-position: 0% 50%
-    }
+
+  100% {
+    background-position: 0% 50%
   }
-  
-  @-o-keyframes AnimationName {
-    0% {
-        background-position: 0% 50%
-    }
-  
-    50% {
-        background-position: 100% 50%
-    }
-  
-    100% {
-        background-position: 0% 50%
-    }
+}
+
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
   }
-  
-  @keyframes AnimationName {
-    0% {
-        background-position: 0% 50%
-    }
-  
-    50% {
-        background-position: 100% 50%
-    }
-  
-    100% {
-        background-position: 0% 50%
-    }
+
+  50% {
+    background-position: 100% 50%
   }
-  
-  .top-bg {
-    background-size: cover;
-    backdrop-filter: blur(50px);
-    background-position: bottom;
-    
+
+  100% {
+    background-position: 0% 50%
   }
-  
-  .bottom-bg {
-    background-image: url('./src/assets/images/bg2.png');
-    background-size: cover;
-    backdrop-filter: blur(1px);
+}
+
+@-o-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
   }
-  
-  .Typewriter .Typewriter__cursor {
-    color: transparent;
+
+  50% {
+    background-position: 100% 50%
   }
-  
-  
-  .Cloud1Image,
-  .Cloud2Image,
-  .Cloud3Image,
-  .Cloud4Image,
-  .Cloud5Image,
-  .Fly1Image,
-  .Fly2Image,
-  .Fly3Image {
-    position: absolute;
+
+  100% {
+    background-position: 0% 50%
   }
-  
-  .HeroImage {
-    animation: Cloud1Image 4s infinite;
-    animation-timing-function: linear;
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+.top-bg {
+  background-size: cover;
+  backdrop-filter: blur(50px);
+  background-position: bottom;
+
+}
+
+.bottom-bg {
+  background-image: url('./src/assets/images/bg2.png');
+  background-size: cover;
+  backdrop-filter: blur(1px);
+}
+
+.Typewriter .Typewriter__cursor {
+  color: transparent;
+}
+
+
+.Cloud1Image,
+.Cloud2Image,
+.Cloud3Image,
+.Cloud4Image,
+.Cloud5Image,
+.Fly1Image,
+.Fly2Image,
+.Fly3Image {
+  position: absolute;
+}
+
+.HeroImage {
+  animation: Cloud1Image 4s infinite;
+  animation-timing-function: linear;
   animation-direction: alternate;
+}
+
+@keyframes Cloud1Image {
+
+  0%,
+  25% {
+    top: 30px;
   }
-  
-  @keyframes Cloud1Image {
-    0%, 25%{ top: 30px; }
-    25%, 50%{ top: -16px; }
-    50%, 75%{ top:-16px; }
-    75%, 100%{ top:0px; }
+
+  25%,
+  50% {
+    top: -16px;
   }
-  
-  .Cloud2Image {
-    top: 70%;
-    left: 10%;
+
+  50%,
+  75% {
+    top: -16px;
   }
-  
-  .Cloud3Image {
-    top: 80%;
-    left: 60%;
+
+  75%,
+  100% {
+    top: 0px;
   }
-  
-  .Cloud4Image {
-    top: 80%;
-    left: 80%;
-  }
-  
-  .Cloud5Image {
-    top: 20%;
-    left: 60%;
-  }
-  
-  .Fly1Image {
-    top: -10%;
-    left: 20%;
-  }
-  
-  .Fly2Image {
-    top: -10%;
-    left: 60%;
-  }
-  
-  .Fly1Image {
-    top: -10%;
-    left: 20%;
-  }
+}
+
+.Cloud2Image {
+  top: 70%;
+  left: 10%;
+}
+
+.Cloud3Image {
+  top: 80%;
+  left: 60%;
+}
+
+.Cloud4Image {
+  top: 80%;
+  left: 80%;
+}
+
+.Cloud5Image {
+  top: 20%;
+  left: 60%;
+}
+
+.Fly1Image {
+  top: -10%;
+  left: 20%;
+}
+
+.Fly2Image {
+  top: -10%;
+  left: 60%;
+}
+
+.Fly1Image {
+  top: -10%;
+  left: 20%;
+}
+
+.LoginPage .container,
+.RegisterPage .container,
+.ResetPage .container
+ {
+  height: 100vh;
+}
+
+.LoginPage .container .card,
+.RegisterPage .container .card,
+.ResetPage .container .card
+ {
+  border-radius: 10px;
+  border: 1px solid #00FF66;
+  background: rgba(45, 217, 143, 0.20);
+  backdrop-filter: blur(2.5px);
+}
+
+.LoginPage .container .card .form-control,
+.RegisterPage .container .card .form-control,
+.ResetPage .container .card .form-control,
+.LoginPage .container .card .form-control:focus-visible,
+.RegisterPage .container .card .form-control:focus-visible,
+.ResetPage .container .card .form-control:focus-visible
+ {
+  background-color: #00FF6600 !important;
+  border-color: #00FF664a;
+  color: white;
+}
+
+.LoginPage .container .card .form-control:focus-visible,
+.RegisterPage .container .card .form-control:focus-visible,
+.ResetPage .container .card .form-control:focus-visible {
+  box-shadow: none !important;
+}
+
+.LoginPage .container .card .form-control::placeholder {
+  color: white;
+}

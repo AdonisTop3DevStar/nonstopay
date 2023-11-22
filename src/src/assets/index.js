@@ -25,8 +25,10 @@ import OFFRAMPImg from '../assets/images/banner/offramp.png';
 import Step1Img from '../assets/images/banner/step1.jpg';
 import Step2Img from '../assets/images/banner/step2.jpg';
 import Step3Img from '../assets/images/banner/step3.jpg';
+import Logo from '../assets/images/logo.png';
 
 export {
+    Logo,
     BannerAnimation1,
     BannerAnimation2,
     BannerAnimation3,

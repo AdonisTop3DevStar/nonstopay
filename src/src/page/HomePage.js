@@ -7,7 +7,7 @@ import TrustIcon5 from '../assets/images/pay/soft2bet.png';
 import TrustIcon6 from '../assets/images/pay/netoplpay.png';
 import TrustIcon7 from '../assets/images/pay/bitandpay.png';
 import TrustIcon8 from '../assets/images/pay/nftuloan.png';
-import { MainCard} from "../components/cards";
+import { MainCard } from "../components/cards";
 import Typewriter from 'typewriter-effect';
 import "react-multi-carousel/lib/styles.css";
 import { CodeEditor } from "../components/layout/codebase";
@@ -18,10 +18,29 @@ import { MainButton, SectionTitle } from "../components";
 import { FAQAccordion } from "../components/accordion";
 import Footer from "../components/layout/footer";
 import { Workflow } from "../components/workflow";
+import { useEffect } from "react";
+import axios from "axios";
 
 
 
 export default function HomePage() {
+
+    const getNewsData = async () => {
+        await axios.get(`https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg`)
+            .then(function (response) {
+                console.log("adonis", response);
+            })
+            .catch(function (error) {
+                console.log("------profile church------", error)
+
+            });
+    }
+
+    
+
+    useEffect(() => {
+        getNewsData();
+    }, []);
 
     return (
         <>
@@ -79,7 +98,7 @@ export default function HomePage() {
             <section className="workflow-section py-5 position-relative" id="workflow">
                 <Container>
                     <SectionTitle title="HOW IT WORKS?" />
-                    <Workflow/>
+                    <Workflow />
                     <div className="text-center">
                         <MainButton title="Integrate API" />
                     </div>
@@ -99,6 +118,11 @@ export default function HomePage() {
                     <Row>
                         <Col sm={12} md={8} className="mx-auto">
                             <CodeEditor />
+                        </Col>
+                    </Row>
+                    <Row className="mt-5">
+                        <Col className="text-center">
+                            <MainButton title="Integrate Now" />
                         </Col>
                     </Row>
                 </Container>
@@ -139,7 +163,7 @@ export default function HomePage() {
                         <Card className="register-card py-5">
                             <Card.Body className="text-center">
                                 <Card.Title className="text-center mb-5">Join the thousands of companies that use our platform</Card.Title>
-                                <MainButton title="Integrate Now"/>
+                                <MainButton title="Integrate Now" />
                             </Card.Body>
                         </Card>
                     </Container>

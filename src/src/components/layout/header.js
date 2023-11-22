@@ -15,7 +15,7 @@ export default function Header() {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="mx-auto d-none d-md-flex">
+                    <Nav className="mx-auto d-md-flex">
                         <Nav.Link href="#trust" className="mx-3">Trust by</Nav.Link>
                         <Nav.Link href="#workflow" className="mx-3">Workflow</Nav.Link>
                         <Nav.Link href="#codebase" className="mx-3">API Integration</Nav.Link>
@@ -24,7 +24,7 @@ export default function Header() {
                         <Nav.Link onClick={handleShow} className="mx-3">Contact Us</Nav.Link>
                     </Nav>
                     <Nav className="ms-auto my-4 my-md-0">
-                        <Nav.Link target="_black" href='https://usdc.nonstopay.net/login' className='text-center' ><Button className="border-0 rounded-5 px-4 py-2 login-btn">Login</Button></Nav.Link>
+                        <Nav.Link target="_black" href="https://usdc.nonstopay.net/login" className='text-center nav-link' ><Button className="border-0 rounded-5 px-4 py-2 login-btn">Login</Button></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
