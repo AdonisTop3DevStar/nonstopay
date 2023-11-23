@@ -32,7 +32,7 @@ export default function HomePage() {
         let config = {
             method: 'get',
             maxBodyLength: Infinity,
-            url: 'https://www.google.com/https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg',
+            url: 'https://localhost:5000/https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg',
             headers: {
                 'accept': 'application/json'
             }
