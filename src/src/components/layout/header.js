@@ -1,17 +1,47 @@
 import { useState } from 'react';
 import { Navbar, Container, Nav, Image, Button, Modal, Form } from "react-bootstrap";
 import Logo from '../../assets/images/logo.png';
+import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Header() {
     const [show, setShow] = useState(false);
+    const [fullName, setFullName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+
+    const sendMessage = async () => {
+        handleClose();
+        if (fullName == '' || email == '' || message == '') {
+            toast.error("Please input informations.");
+            return;
+        }
+
+        let data = {
+            fullName: fullName,
+            email: email,
+            message: message
+        };
+
+        await axios.post(`https://www.nonstopay.net/sendMail.php`, data)
+            .then(function (response) {
+                console.log(response.data)
+                toast.success(response.data.errorMessage);
+            })
+            .catch(function (error) {
+                console.log(error)
+            });
+    }
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
         <Container className="pt-5">
+            <ToastContainer />
             <Navbar expand="lg" className="Header rounded rounded-5 px-4">
                 <Navbar.Brand href="#home">
-                    <Image src={Logo} alt="Logo" height="30"/>
+                    <Image src={Logo} alt="Logo" height="30" />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -36,21 +66,21 @@ export default function Header() {
                     <Form>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Label>Full Name</Form.Label>
-                            <Form.Control type="text" placeholder="Enter Your Full Name" />
+                            <Form.Control type="text" placeholder="Enter Your Full Name" value={fullName} onChange={(e)=> setFullName(e.target.value)} />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter Your Email Address" />
+                            <Form.Control type="email" placeholder="Enter Your Email Address" value={email} onChange={(e)=> setEmail(e.target.value)}/>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                             <Form.Label>Message</Form.Label>
-                            <Form.Control as="textarea" rows={3} />
+                            <Form.Control as="textarea" rows={3} value={message} onChange={(e)=> setMessage(e.target.value)}/>
                         </Form.Group>
                     </Form>
                     <div className='text-center'>
-                        <Button onClick={handleClose} className='main-btn border border-0 rounded-5 px-5 my-3'>Submit</Button>
+                        <Button onClick={sendMessage} className='main-btn border border-0 rounded-5 px-5 my-3' >Submit</Button>
                     </div>
-                </Modal.Body>                
+                </Modal.Body>
             </Modal>
         </Container>
     )

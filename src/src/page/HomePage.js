@@ -21,6 +21,7 @@ import { Workflow } from "../components/workflow";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import parser from 'xml2js';
+import jsonp from 'jsonp';
 
 
 
@@ -38,26 +39,26 @@ export default function HomePage() {
             }
         };
 
-       
+
 
         function formatDay(inputDateString) {
             const date = new Date(inputDateString);
-          
-            const dayOptions = { 
-              day: 'numeric'
+
+            const dayOptions = {
+                day: 'numeric'
             };
             return date.toLocaleDateString('en-US', dayOptions);
-          }
+        }
         function formatDate(inputDateString) {
             const date = new Date(inputDateString);
-          
-            const dateOptions = { 
-              month: 'long', 
-              year: 'numeric' 
+
+            const dateOptions = {
+                month: 'long',
+                year: 'numeric'
             };
-          
+
             return date.toLocaleDateString('en-US', dateOptions)
-          }
+        }
 
         axios.request(config)
             .then((response) => {
@@ -70,13 +71,13 @@ export default function HomePage() {
                         console.log(result.feed);
                         let data = [];
                         for (let i = 0; i < result.feed.entry.length; i++) {
-                              let _data = {
-                                  title : result.feed.entry[i]['media:group'][0]['media:title'][0], 
-                                  description : result.feed.entry[i]['media:group'][0]['media:description'][0], 
-                                  day: formatDay(result.feed.entry[1]['published'][0]), 
-                                  date: formatDate(result.feed.entry[1]['published'][0]) ,
-                                  image: result.feed.entry[i]['media:group'][0]['media:thumbnail'][0].$.url
-                                }
+                            let _data = {
+                                title: result.feed.entry[i]['media:group'][0]['media:title'][0],
+                                description: result.feed.entry[i]['media:group'][0]['media:description'][0],
+                                day: formatDay(result.feed.entry[1]['published'][0]),
+                                date: formatDate(result.feed.entry[1]['published'][0]),
+                                image: result.feed.entry[i]['media:group'][0]['media:thumbnail'][0].$.url
+                            }
                             data.push(_data);
                         }
                         setNewsData(data);
@@ -89,10 +90,22 @@ export default function HomePage() {
             });
     }
 
+    const fetchData = () => {
+        const apiUrl = 'https://www.youtube.com/feeds/videos.xml?channel_id=UCIALMKvObZNtJ6AmdCLP7Lg';
+        
+        jsonp(apiUrl, null, (err, data) => {
+          if (err) {
+            console.error('Error:', err);
+          } else {
+            console.log('Data: adonis', data);
+          }
+        });
+      };
 
 
     useEffect(() => {
-        getNewsData();
+        // getNewsData();
+        fetchData();
     }, []);
 
     return (
