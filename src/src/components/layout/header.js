@@ -17,6 +17,10 @@ export default function Header() {
             toast.error("Please input informations.");
             return;
         }
+        let headers = {
+            'accept': 'application/json', 
+            'Content-Type': 'application/json'
+        }
 
         let data = {
             fullName: fullName,
@@ -24,14 +28,14 @@ export default function Header() {
             message: message
         };
 
-        await axios.post(`https://www.nonstopay.net/sendMail.php`, data)
-            .then(function (response) {
-                console.log(response.data)
-                toast.success(response.data.errorMessage);
-            })
-            .catch(function (error) {
-                console.log(error)
-            });
+        try {
+            const response = await axios.post(`https://www.nonstopay.net/sendMail.php`, data, {headers});
+            console.log(response.data);
+            toast.success(response.data.errorMessage);
+        } catch (error) {
+            console.error(error);
+        }
+
     }
 
     const handleClose = () => setShow(false);
